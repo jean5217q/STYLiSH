@@ -165,9 +165,9 @@
     flex-shrink: 0;
     .profile-order-item-photo-inner {
       @include size(100%,100%);
-      background-image: url('/images/01.jpg');
       background-size: cover;
       background-position: center center;
+      background-color: gray;
     }
   }
 }
