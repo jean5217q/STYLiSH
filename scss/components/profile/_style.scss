@@ -65,7 +65,6 @@
   overflow: hidden;
   .profile-photo-inner {
     @include size(100%,100%);
-    background-image: url('/images/01.jpg');
     background-size: cover;
     background-position: center center;
   } 
