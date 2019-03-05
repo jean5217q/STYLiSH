@@ -124,7 +124,7 @@ function afterLogInEventHandler(res) {
       FB.logout(function (response) {  
         isLogin = false
         renderLogStatusHander()
-        // beforeLogInEventHandler()
+        beforeLogInEventHandler()
         let path = window.location.pathname
         if(path.indexOf('/profile.html')!==-1) {
           window.location.href = `index.html?category=all`
