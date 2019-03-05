@@ -9,12 +9,12 @@
 }
 @media screen and (max-width: 575px) {
   .hero-image-group {
-    height:calc(100px + 15vh);
+    height:calc(120px + 12vh);
   }
 }
 @media screen and (min-width: 576px) {
   .hero-image-group {
-    height: calc(250px + 20vh);
+    height: calc(250px + 10vw);
   }
 }
 // 長條
