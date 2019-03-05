@@ -118,9 +118,9 @@ function afterLogInEventHandler(res) {
   logOutBtn.addEventListener('click',logOutHandler)
   function logOutHandler() {
     if(res.status==='connected') { 
-      FB.api(`/me/permissions`,"DELETE",function(res) {
-        console.log(res)
-      }) 
+      // FB.api(`/me/permissions`,"DELETE",function(res) {
+      //   console.log(res)
+      // }) 
       FB.logout(function (response) {  
         isLogin = false
         renderLogStatusHander()
