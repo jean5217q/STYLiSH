@@ -16,9 +16,6 @@ const starterLoader = document.querySelector('.page-load-container')
 // 類別=>?category=
 // 搜尋=>?search?
 
-if(path==='/'||path==='/index.html'&&!query) {
-  starterLoader.style.display = 'block'
-}
 // 帶參數情況=>複用模板(類別/搜索)(單一商品)
 if(query) {
   if(query.indexOf('?search?keyword=')!==-1) {
@@ -26,7 +23,7 @@ if(query) {
     cataUrl = `${query.split('').splice(1).join('')}&`
     starterLoader.style.display = 'none'
   }
-  else if(path==='/product.html') {
+  else if(path.indexOf('/product.html')!==-1) {
     let id = query.split('=')[1]
     id = id.split('&')[0]
     cataUrl = `details?id=${id}`
@@ -36,13 +33,11 @@ if(query) {
     starterLoader.style.display = 'none'
   } 
 }
-else {
-  if(path='/') cataUrl = 'all'
+else if(path.indexOf('/index.html')!==-1&&!query) {
+  cataUrl = 'all'
+  starterLoader.style.display = 'block'
 }
 
-// if(query.indexOf('?category=')===-1&&path==='/') {
-//   starterLoader.style.display = 'block'
-// }
 
 let initUrl = `${baseUrl}/${cataUrl}`
 
@@ -91,7 +86,7 @@ function searchHandler(e) {
     if(el.value) search = el.value.trim()
   })
   if(!search) return
-  window.location.search = `search?keyword=${search}`
+  window.location.href = `index.html?search?keyword=${search}`
   input.forEach(el => el.value = '')
 }
 

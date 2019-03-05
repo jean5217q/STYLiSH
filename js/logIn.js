@@ -125,8 +125,8 @@ function afterLogInEventHandler(res) {
         renderLogStatusHander()
         checkLoginState()
         let path = window.location.pathname
-        if(path==='/profile.html') {
-          window.location.href = './index.html?category=all'
+        if(path.indexOf('/profile.html')!==-1) {
+          window.location.href = `index.html?category=all`
         }
       })
     }
