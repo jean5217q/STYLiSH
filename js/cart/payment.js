@@ -238,7 +238,7 @@ function postProductInfo(obj) {
     console.log(arr)
     arr.push(orderObj)
     localStorage.setItem('order',JSON.stringify(arr))
-    window.location.pathname = `./pay.html`
+    window.location.href = `./pay.html`
   })
 }
 
