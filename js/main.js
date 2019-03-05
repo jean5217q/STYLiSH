@@ -139,17 +139,15 @@ function clearLoader(){
 }
 
 //轉場動畫函式
-let transOpacity = 1
+// let transOpacity = 1
+
+let transOpacity = null
+const width = window.innerWidth 
+if(width<575) transOpacity = 0.5
+else transOpacity = 1
 function pageTransitionAnimate() {
   const transLayout = document.querySelector('.transition-layout')
-  const width = window.innerWidth
-  if(width<575) {
-
-    transOpacity = transOpacity-0.25
-  }
-  else {
-    transOpacity = transOpacity-0.03
-  }
+  transOpacity = transOpacity-0.08
   transLayout.style.opacity = `${transOpacity}`
   if(transOpacity<0) {
     transLayout.style.display = 'none'
