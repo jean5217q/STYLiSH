@@ -37,7 +37,10 @@ else if(path.indexOf('/index.html')!==-1&&!query) {
   cataUrl = 'all'
   starterLoader.style.display = 'block'
 }
-
+else if(path==='/STYLiSH/') {
+  cataUrl = 'all'
+  starterLoader.style.display = 'block'
+}
 
 let initUrl = `${baseUrl}/${cataUrl}`
 
@@ -73,11 +76,11 @@ input.forEach(el=>el.focus())
 //滑鼠搜尋
 form.forEach(el=>el.addEventListener('submit',searchHandler))
 //鍵盤搜尋
-document.addEventListener('keypress',function(evt){
-  if(evt.keyCode === 13 || evt.which === 13){
-    searchHandler(evt)
-  } 
-})
+// document.addEventListener('keypress',function(evt){
+//   if(evt.keyCode === 13 || evt.which === 13){
+//     searchHandler(evt)
+//   } 
+// })
 //搜索
 function searchHandler(e) {
   e.preventDefault()
