@@ -112,11 +112,11 @@ function afterLogInEventHandler(res) {
   //登出按鈕
   const smLogOutBtn = document.querySelector('.sm-user-logout')
   if(smLogOutBtn) {
+    console.log('')
     smLogOutBtn.addEventListener('click',logOutHandler)
   }
   logOutBtn.addEventListener('click',logOutHandler)
   function logOutHandler() {
-    console.log('e')
     if(res.status==='connected') { 
       FB.api(`/me/permissions`,"DELETE",function(res) {
         console.log(res)

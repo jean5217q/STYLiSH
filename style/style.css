@@ -3139,7 +3139,6 @@ select {
 .profile-photo .profile-photo-inner {
   width: 100%;
   height: 100%;
-  background-image: url("/images/01.jpg");
   background-size: cover;
   background-position: center center;
 }
@@ -3272,9 +3271,9 @@ select {
 .profile-order-item .profile-order-item-photo .profile-order-item-photo-inner {
   width: 100%;
   height: 100%;
-  background-image: url("/images/01.jpg");
   background-size: cover;
   background-position: center center;
+  background-color: gray;
 }
 
 .profile-order-item-text-wrap {
