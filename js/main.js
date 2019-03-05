@@ -142,7 +142,13 @@ function clearLoader(){
 let transOpacity = 1
 function pageTransitionAnimate() {
   const transLayout = document.querySelector('.transition-layout')
-  transOpacity = transOpacity-0.03
+  const width = window.innerWidth
+  if(width<575) {
+    transOpacity = transOpacity-0.1
+  }
+  else {
+    transOpacity = transOpacity-0.03
+  }
   transLayout.style.opacity = `${transOpacity}`
   if(transOpacity<0) {
     transLayout.style.display = 'none'
@@ -150,6 +156,7 @@ function pageTransitionAnimate() {
   }
   requestAnimationFrame(pageTransitionAnimate)
 }
+console.log(window.innerWidth)
 
 
 
