@@ -1,0 +1,39 @@
+.product-bottom {
+  .detail-text {
+    color: $primary;
+    @include flexy($ais: center);
+    .detail-title {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      margin-right: 2rem;
+    }
+    .detail-decor-line {
+      @include size(100%,1px);
+      background-color: $light-gray;
+    }
+  }
+  .detail-content {
+    @include flexy($dir: column);
+    .detail-block {
+      p {
+        font-size: 1rem; 
+        line-height: 1.5;
+        padding-top: 1.5em;
+        padding-bottom: 1em;
+        letter-spacing: 1px;
+        text-align: justify;
+      }
+      .detail-photo {
+        width: 100%;
+        background-color: gray;
+      }
+    }
+  }
+}
+
+
+
+
+
+

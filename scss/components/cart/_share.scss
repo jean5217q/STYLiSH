@@ -1,0 +1,122 @@
+//外層
+.cart-wrap {
+  width:  100%;
+  @include flexy($just: center);
+}
+// 調整左右間距
+@media screen and (max-width: 576px) {
+  .cart-wrap {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 577px) {
+  .cart-wrap {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .cart-wrap {
+    padding: 0 60px;
+  }
+}
+
+//大小螢幕切切換
+@media screen and (max-width: 767px) {
+  .sm-cart-wrap {
+    display: flex;
+  }
+  .lg-cart-wrap {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sm-cart-wrap {
+    display: none;
+  }
+  .lg-cart-wrap {
+    display: flex;
+  }
+}
+//字體設定
+@media screen and (max-width: 575px) {
+  .cart-wrap {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 1199px) {
+  .cart-wrap {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cart-wrap {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+//中間層
+.cart-inner {
+  width: 100%;
+  max-width: 1160px;
+  @include flexy($dir: column);
+}
+// 調整上下間距
+@media screen and (max-width: 576px) {
+  .cart-inner {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+}
+@media screen and (min-width: 577px) {
+  .cart-inner {
+    padding-top: 36px;
+    padding-bottom: 100px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .cart-inner {
+    padding-top: 48px;
+    padding-bottom: 114px;
+  }
+}
+//單個商品圖片說明區
+.cart-item-photo {
+  width: 7.125em; 
+  height: 9.5em;
+  margin-right: 1.25em;
+  background-color: gray; 
+}
+.cart-item-text  {
+  font-size: 1em;
+  color: $side-text;
+  .cart-item-title {
+    font-size: 1.05em;
+    padding-bottom: 1em;
+    color: $text;
+  }
+  .cart-item-number {
+    font-size: 0.9em;
+    padding-bottom: 2.5em;
+  }
+  .cart-item-color {
+    padding-bottom: 0.6em
+  }
+}
+
+.empty-cart {
+  border: 1px solid $input-border;
+  text-align: center;
+  padding: 30px ;
+} 
+
+
+@import 'smCartList',
+        'lgCartList',
+        'delivery',
+        'form',
+        'total'

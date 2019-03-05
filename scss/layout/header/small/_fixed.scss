@@ -1,0 +1,49 @@
+//固定下方
+.sm-fixed {
+  @include fixed($b: 0,$l: 0, $z: 1000);
+  width: 100%;
+  background-color: $black;
+  border-top: solid 1px $gray;
+}
+.sm-fixed-inner {
+  width: 100%;
+  color: $white;
+  @include flexy($just: center,$ais: center);
+}
+//固定內容物調整
+.sm-fixed-block {
+  flex: 1;
+  @include flexy($just: center,$ais: center);
+  @include font($space: 1px,$weight: 100);
+  height: calc(3rem + 5px);
+  color: $white;
+  font-size: 1rem;
+  cursor: pointer;
+  &:first-child {
+    @include after {
+      @include size(1px,1rem);
+      @include absolute($t: 50%,$r: 0);
+      transform: translateY(-50%);
+      background-color: $gray;
+    }
+  }
+  &.sm-header-user-member {
+    display: none;
+  }
+  // &.header-user-login {
+
+  // }
+  .sm-fixed-img-wrap {
+    position: relative;
+  }
+  img {
+    width: 1.8rem;
+    margin-right: 0.2rem;
+    position: relative;
+    &.cart {
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+

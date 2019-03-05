@@ -1,0 +1,88 @@
+extends layout.pug
+block main
+  include includes/header/header.pug
+  main.main-container
+    // page transition start //
+    .transition-layout
+    // page transition end //
+    .product-container
+      .product-inner
+        .product-top
+          .product-img
+          form.product-text.submit-form
+            .product-text-top
+              .product-main-head 
+              .product-number 
+              .product-price 
+              .product-select-group.product-color-group
+                .product-sub-head.product-sub-head-color 顏色
+                .product-select.colorr-select
+                  //- .product-color.color-active
+                  //-   .product-color-inner
+                  //- .product-color
+                  //-   .product-color-inner
+              .product-select-group.product-size-group
+                .product-sub-head.product-sub-head-size 尺寸
+                .product-select.size-select
+                  //- .product-size 
+                  //-   span S
+                  //- .product-size 
+                  //-   span M
+                  //- .product-size
+                  //-   span L
+                  //- .product-size
+                  //-   span XL
+              .product-select-group.product-num-group
+                .product-num-wrap
+                  .product-sub-head.product-sub-head-num 數量
+                  .product-num-box.disabled
+                    .inner-num-calc.num-minus 
+                      span -
+                    input.num-total(type="text" disabled value=1)
+                    .inner-num-calc.num-plus 
+                      span +
+                .num-warn-text 
+                  span 
+              button.add-cart-btn.disabled
+                span 加入購物車
+            .product-text-bottom
+              .sub-text-inner.product-notice
+                span 
+              .sub-text-inner.product-texture
+                span.texture 
+                span.thick 
+                span.flexible 
+              .sub-text-inner.product-made
+                span.texture-place 
+                span.made-place 
+        .product-bottom
+          .detail-text
+            .detail-title 細部說明
+            .detail-decor-line
+          .detail-content
+            //- .detail-block
+            //-   p 推薦水洗藍的顏色，上身非常好看，口袋設計和上季秋冬款一樣都有兩層，非常方便。整體布料偏軟，摸起來舒服，適合在春天或是夏天冷氣房的室內，比起男款此款更適合小個子女生，尺碼可正常拿。
+            //-   img.detail-photo
+            //- .detail-block
+            //-   p 推薦水洗藍的顏色，上身非常好看，口袋設計和上季秋冬款一樣都有兩層，非常方便。整體布料偏軟，摸起來舒服，適合在春天或是夏天冷氣房的室內，比起男款此款更適合小個子女生，尺碼可正常拿。
+            //-   img.detail-photo  
+    // pop up start //  
+    .cart-popup-container
+      .cart-popup-background    
+      .cart-popup-box
+        .cart-popup-inner
+          .cart-popup-header 已成功將商品加入購物車
+          .cart-popup-contents
+            .cart-popup-detail
+              .cart-popup-photo
+              .cart-popup-text-wrap
+                .cart-popup-text.js-cart-popup-text-title 小扇紋細織上衣
+                .cart-popup-text.js-cart-popup-text-color 顏色 | 黃
+                .cart-popup-text.js-cart-popup-text-size  尺寸 | M
+            a(href="/cart.html").cart-popup-checkout 前往結帳
+        .cart-popup-close-btn
+    // pop up end //  
+  include includes/footer.pug
+  script(src="js/logIn.js")
+  script(src="js/main.js")
+  script(src="js/product/main.js")

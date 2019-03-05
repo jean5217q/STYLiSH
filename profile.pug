@@ -1,0 +1,51 @@
+extends layout.pug
+block main
+  include includes/header/header.pug
+  main.main-container
+    .profile-container
+      .profile-inner
+        .basic-info-bar
+          .profile-photo
+            .profile-photo-inner
+          .profile-separation-line
+          .profile-text
+            .profile-user-name JungKook
+            .profile-user-email abcde@gmail.com
+            button.sm-user-logout 
+              span 登
+              span 出
+        .profile-order-wrap
+          .profile-order-title 訂單列表
+          .profile-order-list
+            .profile-order-item
+              .profile-order-item-photo
+                .profile-order-item-photo-inner
+              .profile-order-item-text-wrap
+                .profile-order-item-text-inner
+                  .profile-order-item-text
+                    span.profile-order-item-title 訂單編號：
+                    span.profile-order-item-number 123456789789
+                  .profile-order-item-text
+                    span.profile-order-item-title 訂購日期：
+                    span.profile-order-item-number 2016/02/12
+                .profile-order-item-price
+                  span.profile-order-item-price-title NT.
+                  span.profile-order-item-price-value 20000
+            .profile-order-item
+              .profile-order-item-photo
+                .profile-order-item-photo-inner
+              .profile-order-item-text-wrap
+                .profile-order-item-text-inner
+                  .profile-order-item-text
+                    span.profile-order-item-title 訂單編號：
+                    span.profile-order-item-number 123456789789
+                  .profile-order-item-text
+                    span.profile-order-item-title 訂購日期：
+                    span.profile-order-item-number 2016/02/12
+                .profile-order-item-price
+                  span.profile-order-item-price-title NT.
+                  span.profile-order-item-price-value 300
+  include includes/footer.pug
+  script(src="js/logIn.js")
+  script(src="js/main.js")
+  script(src="js/profile/main.js")

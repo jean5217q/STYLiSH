@@ -1,0 +1,122 @@
+extends layout.pug
+block main
+  include includes/header/header.pug
+  main.main-container
+    // page transition start //
+    .transition-layout
+    // page transition end //
+    .cart-wrap 
+      .cart-inner
+        .page-site-text HOME > BAG
+        include includes/cart/lgCart
+        include includes/cart/smCart
+        .cart-delivery-container 
+          .delivery-block
+            label(for="country") 配送國家
+            .style-select
+              select.country
+                option(value="台灣及離島") 台灣及離島
+                option(value="香港") 香港
+                option(value="上海") 上海
+          .delivery-block
+            label(for="payway") 付款方式
+            .style-select
+              select.payway
+                option(value="宅配貨到付款") 宅配貨到付款
+                option(value="便利商店取件付款") 便利商店取件付款
+        .mind-text
+          span ※ 提醒您：
+          span ● 選擇宅配-請填寫正確收件人資訊，避免包裹配送不達
+          span ● 選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
+        .order-basic-info
+          .order-info-title 訂購資料
+          .order-info-inner
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="name") 收件人姓名
+                input.order-input#name(type="text")
+              span 務必填寫完整收件人姓名，避免包裹無法順利簽收
+
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="phone") 手機
+                input.order-input#phone(type="text")  
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="email") 信箱
+                input.order-input#email(type="email")   
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="address") 地址
+                input.order-input#address(type="text")
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="delivery") 配送時間
+                .radio-item-group
+                  .radio-item.radio-time
+                    input.radio-input(
+                      type="radio" 
+                      name="delivery" 
+                      value="08:00-12:00"
+                      checked) 
+                    label.radio-label 08:00-12:00
+                  .radio-item.radio-time
+                    input.radio-input(
+                      type="radio" 
+                      name="delivery" 
+                      value="14:00-18:00") 
+                    label.radio-label 14:00-18:00
+                  .radio-item
+                    input.radio-input(
+                      type="radio" 
+                      name="delivery" 
+                      value="不指定") 
+                    label.radio-label 不指定
+          .order-info-title.credit 信用卡資料
+          .order-info-inner.credit
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="phone") visa卡號
+                .tpfield#card-number
+              span.card-number-warm 
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="phone") 卡片到期日
+                .tpfield#card-expiration-date
+              span.card-expiration-warm 
+            .order-info-block
+              .order-info-block-inner
+                label.main-label(for="phone") 卡片後三碼
+                .tpfield#card-ccv
+              span.card-ccv-warm 
+        form.pay-area
+          .pay-info
+            .pay-block
+              .pay-text 總金額
+              .pay-num 
+                span.unit NT. 
+                span.total.product-total-price 1770
+            .pay-block
+              .pay-text 運費
+              .pay-num 
+                span.unit NT.
+                span.total.product-delivery-price 30
+                
+          .pay-total
+            .pay-block
+              .pay-text 應付金額
+              .pay-num 
+                span.unit NT.
+                span.total.pay-sumup 1800
+          button(type="submit").pay-btn.disabled
+            span 確
+            span 認
+            span 付
+            span 款
+  include includes/footer.pug
+  script(src="js/logIn.js")
+  script(src="js/main.js")
+  script(src="https://js.tappaysdk.com/tpdirect/v4")
+  script(src="js/cart/payment.js")
+  script(src="js/cart/main.js")
+  

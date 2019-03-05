@@ -1,0 +1,130 @@
+//右半部排一列對齊
+.lg-header-right {
+  @include flexy($ais: center);
+}
+//搜索框
+.lg-searchbar {
+  position: relative;
+  @include flexy($ais: center,$just: center);
+  @include size(11rem,2.2rem);
+  border: 1px solid $input-border;
+  border-radius: 1.2rem;
+  .lg-search-input {
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    background-color: transparent;
+  }
+  .lg-search-btn-wrap {
+    @include absolute($t: 50%,$r: 0);
+    transform: translateY(-50%);
+    cursor: pointer;
+    img {
+      @include size(2.2rem,2.2rem);
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+}
+
+//購物車與登入
+.lg-icon-btn {
+  position: relative;
+  @include size(2.4rem,2.4rem);
+  max-width: 30px;
+  max-height: 30px;
+  transition: 0.2s;
+  cursor: pointer;
+  &.header-user-cart {
+    background-image: url("../images/cart.svg");
+    background-blend-mode: screen;
+  }
+  &.header-user-login {
+    background-image: url("../images/member.svg");
+    background-blend-mode: screen;
+  }
+  &.header-user-photo {
+    background-color: gray;
+    @include size(2.8rem,2.8rem);
+    border-radius: 50%;
+    background-size: contain;
+    display: none;
+  }
+}
+.lg-icon-btn {
+  &:hover {
+      background-color: $primary;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .lg-searchbar,.lg-search-input {
+    width: 130px;
+  }
+  .lg-icon-btn {
+    margin-left: 1rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .lg-icon-btn {
+    margin-left: 1.8rem;
+  }
+}
+
+.dropdown-list {
+  display: none;
+  @include after {
+    @include size(8px,8px);
+    background-color: $white;
+    border-left: 1px solid $input-border;
+    border-top: 1px solid $input-border;
+    transform:  rotate(45deg);
+    @include absolute($t: -5px,$r: 18px);
+  }
+  @include absolute($t: 75px,$r: 20px);
+  border: 1px solid $input-border;
+  border-bottom: 3px solid $input-border;
+  background-color: $white;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.05);
+  .drop-down-link {
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: $side-text;
+    text-align: center;
+    padding: 16px ;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+    border-bottom: 1px solid $input-border;
+    &:last-child {
+      border-bottom: 1px solid none;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .dropdown-list {
+    top: 80px;
+    right: 30px;
+    &:after {
+      right: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .dropdown-list {
+    top: 85px;
+    right: 40px;
+    &:after {
+      right: 36px;
+    }
+  }
+}
+

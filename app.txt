@@ -1,0 +1,6 @@
+facebook
+1046192808914271
+https://developers.facebook.com/apps/1046192808914271/add/
+https://developers.facebook.com/docs/facebook-login/web
+https://medium.com/@chienrongkhor/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%B6%B2%E7%AB%99%E4%B8%8A%E7%94%A8facebook%E5%B8%B3%E8%99%9F%E7%99%BB%E5%85%A5-javascript-sdk-b1c0fee8aa36
+http://sweeteason.pixnet.net/blog/post/37284400-%E7%B6%B2%E7%AB%99%E5%88%A9%E7%94%A8-facebook-%E5%B8%B3%E8%99%9F%E7%99%BB%E5%85%A5-%28javascript-sdk%29

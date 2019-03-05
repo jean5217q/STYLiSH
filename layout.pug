@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title STYLiSH
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900" rel="stylesheet")
+    link(rel="stylesheet", href="style/style.css")
+  body
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '413705432733693',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
+      });
+      FB.AppEvents.logPageView();
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    block main
+    
+
+    
+    

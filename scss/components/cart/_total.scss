@@ -1,0 +1,63 @@
+.pay-area {
+  padding-top: 40px;
+  width: 100%;
+  color: $text;
+  .pay-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid $light-gray;
+  }
+  .pay-total {
+    margin-bottom: 8px;
+  }
+  .pay-block {
+    @include flexy($just: space-between,$ais: center);
+    .pay-text,.pay-num {
+      font-size: 1em;
+      letter-spacing: 1px;
+      padding-bottom: 20px;
+      color: $gray;
+    }
+    .pay-num {
+      @include flexy($ais: flex-end);
+      .unit {
+        font-size: 1em;
+        transform: translateY(-3px);
+      }
+      .total {
+        padding-left: 0.5em;
+        font-size: 1.875em;
+        color: $text;
+      }
+    }
+  }
+}
+//確認付款按鈕
+.pay-btn {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: 100;
+  text-align: center;
+  background-color: $black;
+  color: white;
+  cursor: pointer;
+  span {
+    padding: 0 0.15em;
+  }
+  &.disabled {
+    background-color: $light-black;
+    cursor: text;
+  }
+}
+//調整付款表格位置
+@media screen and (max-width: 767px) {
+  .pay-area {
+    padding-top: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pay-area {
+    max-width: 280px;
+    align-self: flex-end;
+  }
+}

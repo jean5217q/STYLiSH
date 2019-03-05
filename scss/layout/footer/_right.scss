@@ -1,0 +1,57 @@
+//右半邊
+.footer-right {
+  @include flexy($ais: center);
+}
+//社交圖像
+.footer-social-icon-group {
+  @include flexy($ais: center);
+}
+.footer-social-icon {
+  &:last-child {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .footer-social-icon {
+    padding-right: 1rem;
+    img {
+      @include size(1.6rem,1.6rem);
+    }
+  }
+}
+@media screen and (min-width: 576px) {
+  .footer-social-icon {
+    padding-right: 1.5rem;
+    img {
+      @include size(2rem,2rem);
+      cursor: pointer;
+    }
+  }
+}
+
+//版權
+.copy-wright {
+  font-size: 0.6rem;
+  color: $gray;
+}
+@media screen and (max-width: 959px) {
+  .lg-copy-wright {
+    display: none;
+  }
+  .sm-copy-wright {
+    width: 100%;
+    text-align: center;
+    @include absolute($l: 50%,$t: 7rem);
+    transform: translateX(-50%);
+  }
+}
+@media screen and (min-width: 960px) {
+  .lg-copy-wright {
+    display: block;
+    padding-left: 1.5rem;
+  }
+  .sm-copy-wright {
+    display: none;
+  }
+}
+

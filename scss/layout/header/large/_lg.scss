@@ -1,0 +1,56 @@
+.lg-header-inner {
+  @include flexy($ais: center);
+}
+//導覽列高度/左右padding
+@media screen and (min-width: 768px) {
+  .lg-header-inner {
+    height: 80px;
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lg-header-inner {
+    height: 84px;
+    padding: 40px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .lg-header-inner {
+    height: 100px;
+    padding: 0 60px;
+  }
+}
+
+
+.lg-header {
+  &.shadow {
+    box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+  }
+}
+//下方裝飾條
+.lg-header-decoration {
+  background-color: $black;
+  &.decrease-bar {
+    height: 1px;
+    background-color: $input-border;
+  }
+}
+@media screen and (min-width: 768px) {
+  .lg-header-decoration {
+    height: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lg-header-decoration {
+    height: 16px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .lg-header-decoration {
+    height: 30px;
+  }
+}
+
+@import 'left',
+        'right'
+

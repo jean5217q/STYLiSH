@@ -1,0 +1,45 @@
+.sm-header
+  .sm-header-inner
+    .sm-header-top
+      a(href="/").sm-header-logo
+        img(
+          src="images/logo.png", 
+          alt="header-logo")
+      .sm-search-btn-decor
+        img(
+          src="images/search.png", 
+          alt="search-icon")
+    form.sm-search-frame.form-container 
+      .sm-search-group
+        input.sm-search-input.search-input(type="text")
+        button.sm-search-btn(type="submit")
+          img.sm-search-icon.search-btn(
+            src="images/sm-search.png", 
+            alt="search-icon")
+      .close-btn
+    .sm-header-bottom
+      nav.sm-header-nav
+        .sm-nav-list
+          a.sm-nav-link.js-link(href="./index.html?category=women" data-cata="women") 女裝
+          a.sm-nav-link.js-link(href="./index.html?category=men" data-cata="men") 男裝
+          a.sm-nav-link.js-link(href="./index.html?category=accessories" data-cata="accessories") 配件
+  .sm-fixed
+    .sm-fixed-inner
+      a.sm-fixed-block(href="./cart.html")
+        .sm-fixed-img-wrap
+          img.cart(
+            src="images/cart-mobile.png", 
+            alt="cart")
+          .cart-num-wrap.sm-wrap 
+            span.cart-num 
+        span 購物車
+      a.sm-fixed-block.sm-header-user-member(href="./profile.html")
+        img(
+          src="images/member-mobile.png", 
+          alt="member")
+        span 會員        
+      button.sm-fixed-block.sm-header-user-login
+        img(
+          src="images/member-mobile.png", 
+          alt="member")
+        span 會員          

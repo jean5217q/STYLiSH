@@ -1,0 +1,31 @@
+//整個導覽列
+.sm-header-nav {
+  background-color: $black;
+}
+.sm-nav-list {
+  @include flexy($ais: center);
+}
+//類別按鈕
+.sm-nav-link {
+  flex: 1;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: $gray;
+  padding: 1rem 0;
+  cursor: pointer;
+  &.active {
+    color: $white;
+  }
+  @include after {
+    @include size(1px,1rem);
+    @include absolute($t: 50%);
+    transform: translateY(-50%);
+    background-color: $gray;
+  }
+  &:first-child {
+    &::after {
+      display: none;
+    }
+  }
+}

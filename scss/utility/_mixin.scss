@@ -1,0 +1,98 @@
+@mixin align_row {
+  display: flex;
+  flex-direction: row
+}
+@mixin align_col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin size($w,$h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin flexy($dir:null,$wrap: null,$just: null,$ais: null) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $ais;
+}
+
+@mixin absolute($t: null,$r: null,$b: null,$l:null,$z: null) {
+  position: absolute;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  z-index: $z;
+}
+
+@mixin fixed($t: null,$r: null,$b: null,$l:null,$z:null) {
+  position: fixed;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  z-index: $z;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin before {
+  position: relative;
+  &::before {
+    display: block;
+    content: '';
+    @content;
+  }
+}
+
+@mixin after {
+  position: relative;
+  &::after {
+    display: block;
+    content: '';
+    @content;
+  }
+}
+
+@mixin font($name: null,$size: null,$space: null,$weight: null,$color: null) {
+  font-family: $name;
+  font-size: $size;
+  letter-spacing: $space;
+  font-weight: $weight;
+  color: $color;
+}
+
+// select樣式
+@mixin noneSlelect {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+}
+@mixin styleSelect($h: null,$w: null) {
+  width: $w;
+  height: $h;
+  @include flexy($ais: center);
+  border: 1px solid $input-border;
+  border-radius: 0.5em;
+  background-color: #fcfcfc;
+  padding: 0.6em;
+  position: relative;
+  @include after {
+    position: absolute;
+    top: 50%;
+    right: 0.6em;
+    width: 0.36em;
+    height: 0.36em;
+    border-top: 2px solid $side-text;
+    border-right: 2px solid $side-text;
+    transform: translateY(-50%) rotate(135deg);
+  }
+}

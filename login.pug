@@ -1,0 +1,12 @@
+extends layout.pug
+block main
+  include includes/header/header.pug
+  main.main-container
+    .login-container
+      .login-logo
+        .fb-icon
+        button.fb-button
+          span 以facebook帳號登入
+  include includes/footer.pug
+  script(src="js/logIn.js")
+  script(src="js/main.js")

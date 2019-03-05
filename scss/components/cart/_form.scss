@@ -1,0 +1,111 @@
+// .order-basic-info=>表單最外層
+// .order-info-title=>訂購資料  
+// .order-info-inner=>所有input框外層  
+.order-basic-info {
+  .order-info-title {
+    padding-top: 1.2em;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    // background-color: red;
+  }
+  .order-info-inner {
+    border-top: 1px solid $decor-line;
+    border-bottom: 1px solid $decor-line;
+    padding: 2.25em 0;
+    &.credit {
+      border-top: none;
+    }
+  }
+}
+
+// .order-info-block-inner =>包含單個label/輸入框/警示語外框
+// span=>警示語
+.order-info-block {
+  @include flexy($dir: column);
+  margin-bottom: 1.875em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  span {
+    font-size: 0.875em;
+    text-align: right;
+    margin-top: 0.625em;
+    color: $primary;
+  }
+}
+@media screen and (max-width: 767px) {
+  .order-info-block {
+    width: 100%;
+
+  }
+}
+@media screen and (min-width: 768px) {
+  .order-info-block {
+    width: 50%;
+    min-width: 620px;
+  }
+}
+// .order-info-block-inner =>label與輸入框
+// .main-label=>輸入框標題
+// .order-input=>輸入框 
+.order-info-block-inner {
+  .order-input {
+    font-size: 1em;
+    padding: 0.625em;
+    border: 1px solid $input-border;
+    border-radius: 0.5em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .order-info-block-inner {
+    @include flexy($dir: column); //上下
+    width: 100%;
+  }
+  .main-label {
+    padding-bottom: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .order-info-block-inner {
+    @include flexy($ais: center);
+  }
+  .main-label {
+    width: 150px;
+  }
+  .order-input {
+    width: 100%;
+  }
+}
+
+// .radio-item-group=>多選群組
+// .radio-item=>單個多選(label/input)
+.radio-item-group {
+  width: 100%;
+  @include flexy($ais: center);
+  .radio-item {
+    @include flexy($ais: center);
+    &.radio-time {
+      width: 38%;
+    }
+    .radio-label {
+      font-size: 0.9em;
+    }
+    .radio-input {
+      margin-right: 4px;
+    }
+  }
+}
+
+//tabpay區域
+.tpfield {
+  width: 100%;
+  height: 3em;
+  font-size: 1em;
+  padding: 0.625em;
+  border: 1px solid $input-border;
+  border-radius: 0.5em;
+}
+
+
+

@@ -1,0 +1,43 @@
+//網頁內文與header間距
+.main-container {
+  @include flexy($dir: column,$ais: center);
+}
+@media screen and (max-width: 359px) {
+  .main-container {
+    margin-top: 92px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 575px) {
+  .main-container {
+    margin-top: 101px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .main-container {
+    margin-top: 108px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-container {
+    margin-top: 90px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main-container {
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .main-container {
+    margin-top: 130px;
+  }
+}
+//sticker footer設定=>內文短不跑版
+body { 
+  display: flex; 
+  flex-flow: column; 
+  min-height: 101vh; 
+} 
+main { 
+  flex: 1; 
+}

@@ -1,0 +1,29 @@
+extends layout.pug
+block main
+  include includes/header/header.pug
+  main.main-container
+    .success-pay-container
+      .sucess-box
+        .sucuess-box-inner
+          .success-animate-wrap
+            canvas#mycanvas
+            .success-animate-text 已收到您的款項
+          .success-text-wrap
+            .success-pay-wrap
+              span.succes-pay-unit NT.
+              span.success-pay-price 1000
+            .success-decor-line
+            .success-sub-wrap
+              .success-sub-title-wrap
+                span.success-sub-title 訂單編號：
+                span.success-value.success-number-value 123456
+              .success-sub-title-wrap
+                span.success-sub-title 付款時間：
+                span.success-value.success-time-value 2018/10/12
+              .success-sub-title-wrap
+                span.success-sub-title 付款方式：
+                span.success-value.success-pay-value 信用卡
+  include includes/footer.pug
+  script(src="js/logIn.js")
+  script(src="js/main.js")
+  script(src="js/cart/success.js")

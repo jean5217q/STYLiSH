@@ -1,0 +1,103 @@
+//左半部總
+.lg-header-left {
+  margin-right: auto;
+  @include flexy($ais: center);
+}
+
+//LOGO與導覽列距離 / LOGO高度
+@media screen and (min-width: 768px) {
+  .lg-header-logo img {
+    height: 2rem; //30px //32px
+  }
+}
+@media screen and (min-width: 960px) {
+  .lg-header-logo {
+    margin-right: 1rem; 
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lg-header-logo img {
+    height: 2.3rem;
+  }
+}
+
+//導覽列
+.lg-nav-list {
+  @include flexy($ais: center);
+}
+.lg-nav-item {
+  position: relative;
+  border-right: 1px solid $gray;
+  &:hover {
+    .lg-nav-link {
+      color: $primary;
+      .nav-indicator {
+        left: 0;
+        right: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+.lg-nav-link {
+  position: relative;
+  font-size: 1rem;
+  transition: 0.2s;
+  cursor: pointer;
+  &.active {
+    color: $primary;
+  }
+  span {
+    &:nth-child(even) {
+      letter-spacing: 0;
+    }
+  }
+  .nav-indicator {
+    height: 4px;
+    @include absolute($l: 50%,$r: 50%);
+    transition: 0.2s;
+    opacity: 0;
+    background-color: $primary;
+    &.active {
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  } 
+}
+//RWD
+@media screen and (min-width: 768px) {
+  .lg-nav-item {
+    padding: 0 1.2rem;
+  }
+  .lg-nav-link {
+    span {
+      letter-spacing: 1rem;
+    }
+    .nav-indicator {
+      bottom: -32px;
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  .lg-nav-item {
+    padding: 0 2rem;
+  }
+  .lg-nav-link {
+    letter-spacing: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lg-nav-link {
+    .nav-indicator {
+      bottom: -34px;
+    }
+  }
+}
+@media screen and (min-width: 1600px) {
+  .lg-nav-link {
+    .nav-indicator {
+      bottom: -40px;
+    }
+  }
+}

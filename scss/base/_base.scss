@@ -1,0 +1,49 @@
+html {
+  height: 101vh;
+}
+body {
+  font-family: 'PingFang TC';
+  font-size: 1rem;
+  letter-spacing: 0.0625em;  
+  color: $text;
+}
+a {
+  color: $text;
+  text-decoration: none;
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+
+input,button,select {
+  outline: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+img {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1599px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}

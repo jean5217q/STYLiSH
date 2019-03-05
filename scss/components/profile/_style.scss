@@ -1,0 +1,211 @@
+.profile-container {
+  width: 100%;
+  padding-top: 50px; //與其它頁面確認
+  padding-bottom: 50px;
+  @include flexy($ais: center,$just: center);
+}
+
+@media screen and (max-width: 959px) {
+  .profile-container {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .profile-container {
+    padding: 50px 16px;
+  }
+}
+
+.profile-inner {
+  width: 70%;
+  max-width: 1200px;
+  @include flexy($dir: column,$ais: center,$just: center);
+  padding: 40px;
+  border: 1px solid $input-border;
+  border-top: 5px solid $input-border;
+  
+}
+
+@media screen and (min-width: 960px) {
+  .profile-inner {
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.05)
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .profile-inner {
+    background-color: $white;
+    width: 100%;
+    box-shadow: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile-inner {
+    padding: 0;
+    border: none;
+  }
+}
+
+.basic-info-bar {
+  width: 100%;
+  @include flexy($dir: column,$ais: center,$just: center);
+  padding-bottom: 40px;
+
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  // min-width: 120px;
+  // min-height: 120px;
+  border-radius: 50%;
+  background-color: gray;
+  overflow: hidden;
+  .profile-photo-inner {
+    @include size(100%,100%);
+    background-image: url('/images/01.jpg');
+    background-size: cover;
+    background-position: center center;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .profile-photo {
+    @include size(80px,80px);
+  }
+}
+
+
+
+.profile-separation-line {
+  @include size(50%,1px);
+  margin: 16px 0;
+  background-color: $input-border;
+  position: relative;
+  @include after {
+    @include size(5px,5px);
+    @include absolute($t: 50%);
+    transform: translateY(-50%) rotate(45deg);
+    background-color: $input-border
+  }
+  @include before {
+    @include size(5px,5px);
+    @include absolute($t: 50% ,$r: 0);
+    transform: translateY(-50%) rotate(45deg);
+    background-color: $input-border
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile-separation-line {
+    margin: 14px 0;
+  }
+}
+
+.profile-text {
+  @include flexy($dir: column,$ais: center);
+  .profile-user-name {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  .profile-user-email {
+    font-size: 16px;
+    text-align: center;
+    color: $side-text;
+  }
+}
+@media screen and (max-width: 767px) {
+  .profile-text {
+    .profile-user-name {
+      font-size: 18px;
+    }
+    .profile-user-email {
+      font-size: 15px;
+    }
+  }
+}
+
+.sm-user-logout {
+  font-size: 12px;
+  color: $side-text;
+  cursor: pointer;
+  padding: 2px 12px;
+  border-radius: 3px;
+  border: 1px solid $input-border;
+  margin-top: 14px;
+  span {
+    padding: 0 2px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sm-user-logout {
+    display: none;
+  }
+}
+
+
+.profile-order-title {
+  padding-left: 4px;
+  padding-bottom: 6px;
+  color: $side-text;
+}
+.profile-order-item {
+  width: 100%;
+  @include flexy;
+
+  border: 1px solid $input-border;
+  margin-bottom: 8px;
+  .profile-order-item-photo {
+    width: 100px;
+    height: 120px;
+    flex-shrink: 0;
+    .profile-order-item-photo-inner {
+      @include size(100%,100%);
+      background-image: url('/images/01.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}
+
+.profile-order-item-text-wrap {
+  @include flexy;
+  padding: 16px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+@media screen and (min-width: 576px) {
+  .profile-order-item-text-inner {
+    margin-right: 160px;
+  }
+}
+
+.profile-order-item-text {
+  padding-bottom: 4px;
+  line-height: 1.3;
+}
+@media screen and (max-width: 575px) {
+  .profile-order-item-text {
+    font-size: 13px;
+  }
+}
+
+.profile-order-item-price {
+  text-align: right;
+  @include absolute($r: 10px,$b: 10px);
+  .profile-order-item-price-title {
+    color: $side-text;
+  }
+  .profile-order-item-price-value {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+

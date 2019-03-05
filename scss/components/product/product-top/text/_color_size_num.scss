@@ -1,0 +1,160 @@
+//每個選擇項目
+.product-select-group {
+  @include flexy($ais: center);
+  padding-bottom: 1.5rem;
+  position: relative;
+  &.product-num-group {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .product-num-group {
+    padding-bottom: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .product-num-group {
+    padding-bottom: 12px;
+  }
+}
+
+//顏色尺寸數量的文字
+.product-sub-head {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  flex-shrink: 0;
+  padding-right: 1rem;
+  margin-right: 1.4rem;
+  border-right: 1px solid $input-border;
+}
+//小螢幕數量標題消失
+@media screen and (max-width: 767px) {
+  .product-sub-head-num {
+    display: none;
+  }
+}
+
+// 選擇框
+.product-select {
+  @include flexy($ais: center);
+}
+
+//顏色群組
+.product-color {
+  @include flexy($ais: center,$just: center);
+  @include size(36px,36px);
+  padding: 4px;
+  margin-right: 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+  &.js-select-color_code {
+    border: 1px solid $decor-line;
+  }
+  &.sold-out {
+    background-color: $decor-line;
+    @include after {
+      @include size(100%,5px);
+      @include absolute;
+      transform: rotate(45deg);
+      background-color: $decor-line;
+      cursor: not-allowed;
+    }
+  }
+  .product-color-inner {
+    @include size(100%,100%);
+    border: 1px solid $decor-line;
+  }
+}
+//商品尺寸
+.product-size {
+  @include flexy($just: center,$ais: center);
+  @include size(36px,36px);
+  border-radius: 50%;
+  margin-right: 16px;
+  background-color: #ececec;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+  span {
+    font-size: 20px;
+  }
+  &.js-select-size {
+    background-color: $black;
+    span {
+      color: $white;
+      font-weight: 300;
+    }
+  }
+  &.sold-out {
+    background-color: $gray-white;
+    cursor: not-allowed;
+    span {
+      color: #dbdbdb;
+    }
+  }
+}
+//商品數量
+.product-num-wrap {
+  @include flexy($ais: center);
+}
+.product-num-box {
+  position: relative;
+  @include flexy($ais: center);
+  font-size: 16px;
+  width: 50%;
+  border: 1px solid $light-gray;
+  &.disabled {
+    background-color: $gray-white;
+  }
+  .inner-num-calc {
+    text-align: center;
+    padding: 16px;
+    flex-shrink: 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .num-total {
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    color: $drak-primary;
+    background-color: transparent;
+    &:disabled {
+      color: $light-text;
+    }
+  }
+}
+.num-warn-text {
+  color: #f44e42;
+  letter-spacing: 1px;
+  display: none;
+  &.showWarn {
+    display: block;
+  }
+  span {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .num-warn-text {
+    padding-left: 4.8em;
+    padding-top: 6px;
+  }  
+}
+@media screen and (min-width: 768px) {
+  .num-warn-text {
+    @include absolute($l: 90px);
+    padding-top: 1px;
+  }  
+}
+@media screen and (max-width: 767px) {
+  .product-num-box {
+    width: 100%;
+  }
+  .num-warn-text {
+    text-align: right;
+  }
+}

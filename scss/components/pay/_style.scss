@@ -1,0 +1,157 @@
+//1600=>130+140 = 270
+//1200=>100+132 = 232
+// 960=> 90+132 = 222
+// 768=> 90+146 = 236
+// 767=> 108+54 = 163
+// 576=> 51+101 = 152
+// 360=> 92+ 48 = 140
+//最小高度
+.success-pay-container {
+  @include flexy($ais: center,$just: center);
+  width: 100%;
+  overflow: hidden;
+}
+@media screen and (max-width: 359px) {
+  .success-pay-container {
+    height: calc(101vh - 140px);
+  }
+}
+@media screen and (min-width: 360px) {
+  .success-pay-container {
+    height: calc(101vh - 152px);
+  }
+}
+@media screen and (min-width: 576px) {
+  .success-pay-container {
+    height: calc(101vh - 163px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .success-pay-container {
+    height: calc(101vh - 236px);
+  }
+}
+@media screen and (min-width: 960px) {
+  .success-pay-container {
+    height: calc(101vh - 222px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .success-pay-container {
+    height: calc(101vh - 232px);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .success-pay-container {
+    height: calc(101vh - 270px);
+  }
+}
+
+//框外側尺寸
+.sucess-box {
+  @include flexy($just: center,$ais: center);
+  @include size(500px,400px);
+  padding: 50px;
+}
+@media screen and (max-width: 575px) {
+  .sucess-box {
+    border: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .sucess-box {
+    border: 1px solid $input-border;
+    border-top: 5px solid $input-border;
+  }
+}
+
+//框內部對齊
+.sucuess-box-inner {
+  position: relative;
+  @include size(100%,100%);
+}
+//基準字
+@media screen and (max-width: 575px) {
+  .sucuess-box-inner {
+    font-size: 14px;
+    border: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .sucuess-box-inner {
+    font-size: 16px;
+  }
+}
+//動畫區域
+.success-animate-wrap {
+  @include size(400px,400px);
+  @include flexy($dir: column,$ais: center);
+  @include absolute($t: 0,$l:50%);
+  transform: translateX(-50%);
+  
+}
+#mycanvas {
+  @include size(25%,25%); //100 100
+}
+.success-animate-text {
+  font-size: 0.9em;
+  text-align: center;
+  color: $primary;
+  margin-top: -10px;
+}
+
+//文字區域
+.success-text-wrap {
+  width: 100%;
+  @include flexy($dir: column,$ais: center);
+  @include absolute($t: 130px,$l:50%);
+  transform: translateX(-50%);
+  transition: 0.3s;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+}
+
+// //裝飾線
+.success-decor-line {
+  width:250px;
+  height: 1px;
+  background-color: $input-border;
+  margin-top: 0.5em;
+  margin-bottom: 0.75em;
+  @include after {
+    @include absolute($t: 50%);
+    transform: translateY(-50%) rotate(45deg);
+    @include size(5px,5px);
+    background-color: $input-border
+  }
+  @include before {
+    @include absolute($t: 50% ,$r: 0);
+    transform: translateY(-50%) rotate(45deg);
+    @include size(5px,5px);
+    background-color: $input-border
+  }
+}
+
+//價格
+.success-pay-wrap {
+  .succes-pay-unit {
+    font-size: 0.875em;
+    padding-right: 2px;
+  }
+  .success-pay-price {
+    font-size: 2.25em;
+  }
+}
+
+
+//其他資訊
+.success-sub-title-wrap {
+  line-height: 1.6;
+  font-size: 1em;
+  color: $side-text;
+  .success-sub-title {
+    margin-right: 0.5em;
+  }
+}

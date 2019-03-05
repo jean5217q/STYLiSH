@@ -1,0 +1,59 @@
+footer {
+  width: 100%;
+  @include flexy($just: center,$ais: center);
+  background-color: $black;
+}
+//整體左右padding
+@media screen and (max-width: 360px) {
+  footer {
+    padding: 0 16px;
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 767px) {
+  footer {
+    padding: 0 6%;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 0 40px;
+  }
+}
+
+//整體上下padding
+.footer-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  @include flexy($just: space-between,$ais: center);
+}
+@media screen and (max-width: 767px) {
+  .footer-inner {
+    padding-top: 1rem;
+    padding-bottom: calc(5rem + 8px); //購物車會員欄高為3rem + 5px
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer-inner {
+    padding: 50px 0 64px 0; //COPYWRIGHT移動下方增加padding
+  }
+}
+@media screen and (min-width: 960px) {
+  .footer-inner {
+    padding: 50px 0;
+  }
+}
+
+@import 'left',
+        'right'
+
+
+
+
+
+

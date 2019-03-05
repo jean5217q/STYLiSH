@@ -1,0 +1,47 @@
+//導覽列固定
+header{
+  @include fixed($t: 0,$l: 0, $z: 1000);
+  width: 100%;
+  background-color: $white;
+}
+
+
+//大小螢幕切換
+@media screen and (max-width: 767px) {
+  .lg-header {
+    display: none;
+  }
+  .sm-header {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .lg-header {
+    display: block;
+  }
+  .sm-header {
+    display: none;
+  }
+}
+//購物車顯示數字小圓
+.cart-num-wrap {
+  @include flexy($ais: center,$just: center);
+  @include absolute($t: 0,$r: -5px);
+  width: 16px;
+  height: 16px;
+  background-color: $primary;
+  border-radius: 50%;
+  display: none;
+  &.sm-wrap {
+    right: 4px;
+  }
+  &.show {
+    display: flex;
+  }
+}
+.cart-num {
+  font-weight: 300;
+  color: $white;
+  font-size: 7px;
+}
+

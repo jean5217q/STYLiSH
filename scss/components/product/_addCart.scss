@@ -1,0 +1,92 @@
+
+.cart-popup-container {
+  display: none;
+}
+.cart-popup-background  {
+  @include absolute($t: 0,$l: 0);
+  @include size(100vw,100vh);
+  background-color: $text;
+  opacity: 0.8;
+}
+.cart-popup-box {
+  width: 400px;
+  @include absolute($t: 50%,$l: 50%);
+  transform: translate(-50%,-50%);
+  border: 1px solid $input-border;
+  padding: 20px;
+  background-color: $white;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.15)
+}
+
+.cart-popup-inner {
+  @include flexy($dir: column);
+}
+.cart-popup-header {
+  width: 100%;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  text-align: center;
+  color: $primary;
+  border-bottom: 1px solid $input-border;
+}
+.cart-popup-contents {
+  @include flexy($just: space-between);
+  position: relative;
+}
+.cart-popup-detail {
+  @include flexy;
+}
+.cart-popup-photo {
+  width: 90px;
+  height: 120px;
+  background-color: gray;
+  background-size: cover;
+  margin-right: 16px;
+}
+.cart-popup-text-wrap {
+  flex-shrink: 0;
+}
+
+.cart-popup-text {
+  font-size: 13px;
+  padding-bottom: 6px;
+  color: $side-text;
+  &.js-cart-popup-text-title {
+    font-size: 14px;
+    padding-bottom: 8px;
+    color: $text;
+    
+  }
+}
+.cart-popup-checkout {
+  position: relative;
+  align-self: flex-end;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  background-color: $primary;
+  color: $white;
+  transition: 0.1s ease-in;
+  &:hover {
+    background-color: $drak-primary;
+  }
+
+}
+.cart-popup-close-btn {
+  @include size(16px,16px);
+  background-color: $primary;
+  @include after {
+    @include size(12px,2px);
+    background-color: $white;
+    transform: translate(2px,5px) rotate(45deg)
+  }
+  @include before {
+    @include size(12px,2px);
+    background-color: $white;
+    transform: translate(2px,7px) rotate(135deg)
+  }
+  @include absolute($t: 0,$r: 0);
+  cursor: pointer;
+}

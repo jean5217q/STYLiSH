@@ -1,0 +1,38 @@
+//上方商品圖文框
+.product-top {
+  width: 100%;
+}
+//改變排列
+@media screen and (min-width: 768px) {
+  .product-top {
+    @include flexy;
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .product-top {
+    @include flexy($dir: column);
+    margin-bottom: 3rem;
+  }
+}
+// 小螢幕時加入左右padding
+@media screen and (max-width: 576px) {
+  .product-text,
+  .product-bottom {
+    padding: 0 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@import 'img',
+        './text/main'

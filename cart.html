@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>STYLiSH</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900" rel="stylesheet"/>
+    <link rel="stylesheet" href="style/style.css"/>
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '413705432733693',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
+      });
+      FB.AppEvents.logPageView();
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header>
+      <div class="lg-header">
+        <div class="lg-header-inner">
+          <div class="lg-header-left"><a class="lg-header-logo" href="/?category=all"><img src="images/logo.svg" alt="header-logo"/></a>
+            <nav class="lg-header-nav">
+              <ul class="lg-nav-list">
+                <li class="lg-nav-item"><a class="lg-nav-link js-link" href="./index.html?category=women" data-cata="women"> <span>女</span><span>裝</span>
+                    <div class="nav-indicator" data-cata="women"></div></a></li>
+                <li class="lg-nav-item"><a class="lg-nav-link js-link" href="./index.html?category=men" data-cata="men"> <span>男</span><span>裝</span>
+                    <div class="nav-indicator" data-cata="men"></div></a></li>
+                <li class="lg-nav-item"><a class="lg-nav-link js-link" href="./index.html?category=accessories" data-cata="accessories"> <span>配</span><span>件</span>
+                    <div class="nav-indicator" data-cata="accessories"> </div></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="lg-header-right">
+            <form class="lg-searchbar form-container">
+              <input class="lg-search-input search-input" type="text"/>
+              <button class="lg-search-btn-wrap" type="submit"><img class="lg-search-logo search-btn" src="images/search.png" alt="search"/></button>
+            </form><a class="lg-icon-btn header-user-cart" href="./cart.html">
+              <div class="cart-num-wrap"><span class="cart-num"></span></div></a>
+            <button class="lg-icon-btn header-user-login" scope="public_profile,email"></button>
+            <button class="lg-icon-btn header-user-photo" scope="public_profile,email"></button>
+            <ul class="dropdown-list">
+              <li class="dropdown-item"><a class="drop-down-link" href="./profile.html">帳戶管理</a></li>
+              <li class="dropdown-item">
+                <button class="drop-down-link to-logout-btn">登出</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lg-header-decoration"></div>
+      </div>
+      <div class="sm-header">
+        <div class="sm-header-inner">
+          <div class="sm-header-top"><a class="sm-header-logo" href="/"><img src="images/logo.png" alt="header-logo"/></a>
+            <div class="sm-search-btn-decor"><img src="images/search.png" alt="search-icon"/></div>
+          </div>
+          <form class="sm-search-frame form-container"> 
+            <div class="sm-search-group">
+              <input class="sm-search-input search-input" type="text"/>
+              <button class="sm-search-btn" type="submit"><img class="sm-search-icon search-btn" src="images/sm-search.png" alt="search-icon"/></button>
+            </div>
+            <div class="close-btn"></div>
+          </form>
+          <div class="sm-header-bottom">
+            <nav class="sm-header-nav">
+              <div class="sm-nav-list"><a class="sm-nav-link js-link" href="./index.html?category=women" data-cata="women">女裝</a><a class="sm-nav-link js-link" href="./index.html?category=men" data-cata="men">男裝</a><a class="sm-nav-link js-link" href="./index.html?category=accessories" data-cata="accessories">配件</a></div>
+            </nav>
+          </div>
+        </div>
+        <div class="sm-fixed">
+          <div class="sm-fixed-inner"><a class="sm-fixed-block" href="./cart.html">
+              <div class="sm-fixed-img-wrap"><img class="cart" src="images/cart-mobile.png" alt="cart"/>
+                <div class="cart-num-wrap sm-wrap"> <span class="cart-num"> </span></div>
+              </div><span>購物車</span></a><a class="sm-fixed-block sm-header-user-member" href="./profile.html"><img src="images/member-mobile.png" alt="member"/><span>會員        </span></a>
+            <button class="sm-fixed-block sm-header-user-login"><img src="images/member-mobile.png" alt="member"/><span>會員          </span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-container">
+      <!-- page transition start //-->
+      <div class="transition-layout"></div>
+      <!-- page transition end //-->
+      <div class="cart-wrap"> 
+        <div class="cart-inner">
+          <div class="page-site-text">HOME > BAG</div>
+          <div class="lg-cart-wrap">
+            <div class="cart-product-group lg-cart-product-group">
+              <div class="lg-cart-title-group">
+                <div class="cart-title lg-cart-title cart-main-title">購物車(3)</div>
+                <div class="cart-title lg-cart-title cart-num-title">數量</div>
+                <div class="cart-title lg-cart-title cart-ptice-title">單價</div>
+                <div class="cart-title lg-cart-title cart-total-title">小計</div>
+                <div class="cart-title lg-cart-title cart-blank"></div>
+              </div>
+              <div class="cart-item-group lg-cart-item-group"></div>
+            </div>
+          </div>
+          <div class="sm-cart-wrap">
+            <div class="cart-product-group sm-cart-product-group">
+              <div class="sm-cart-title-group">
+                <div class="cart-title sm-cart-title cart-main-title">購物車(3)</div>
+              </div>
+              <div class="cart-item-group sm-cart-item-group"></div>
+            </div>
+          </div>
+          <div class="cart-delivery-container"> 
+            <div class="delivery-block">
+              <label for="country">配送國家</label>
+              <div class="style-select">
+                <select class="country">
+                  <option value="台灣及離島">台灣及離島</option>
+                  <option value="香港">香港</option>
+                  <option value="上海">上海</option>
+                </select>
+              </div>
+            </div>
+            <div class="delivery-block">
+              <label for="payway">付款方式</label>
+              <div class="style-select">
+                <select class="payway">
+                  <option value="宅配貨到付款">宅配貨到付款</option>
+                  <option value="便利商店取件付款">便利商店取件付款</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="mind-text"><span>※ 提醒您：</span><span>● 選擇宅配-請填寫正確收件人資訊，避免包裹配送不達</span><span>● 選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取</span></div>
+          <div class="order-basic-info">
+            <div class="order-info-title">訂購資料</div>
+            <div class="order-info-inner">
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="name">收件人姓名</label>
+                  <input class="order-input" id="name" type="text"/>
+                </div><span>務必填寫完整收件人姓名，避免包裹無法順利簽收</span>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="phone">手機</label>
+                  <input class="order-input" id="phone" type="text"/>
+                </div>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="email">信箱</label>
+                  <input class="order-input" id="email" type="email"/>
+                </div>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="address">地址</label>
+                  <input class="order-input" id="address" type="text"/>
+                </div>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="delivery">配送時間</label>
+                  <div class="radio-item-group">
+                    <div class="radio-item radio-time">
+                      <input class="radio-input" type="radio" name="delivery" value="08:00-12:00" checked="checked"/>
+                      <label class="radio-label">08:00-12:00</label>
+                    </div>
+                    <div class="radio-item radio-time">
+                      <input class="radio-input" type="radio" name="delivery" value="14:00-18:00"/>
+                      <label class="radio-label">14:00-18:00</label>
+                    </div>
+                    <div class="radio-item">
+                      <input class="radio-input" type="radio" name="delivery" value="不指定"/>
+                      <label class="radio-label">不指定</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-info-title credit">信用卡資料</div>
+            <div class="order-info-inner credit">
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="phone">visa卡號</label>
+                  <div class="tpfield" id="card-number"></div>
+                </div><span class="card-number-warm"> </span>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="phone">卡片到期日</label>
+                  <div class="tpfield" id="card-expiration-date"></div>
+                </div><span class="card-expiration-warm"> </span>
+              </div>
+              <div class="order-info-block">
+                <div class="order-info-block-inner">
+                  <label class="main-label" for="phone">卡片後三碼</label>
+                  <div class="tpfield" id="card-ccv"></div>
+                </div><span class="card-ccv-warm"> </span>
+              </div>
+            </div>
+          </div>
+          <form class="pay-area">
+            <div class="pay-info">
+              <div class="pay-block">
+                <div class="pay-text">總金額</div>
+                <div class="pay-num"> <span class="unit">NT. </span><span class="total product-total-price">1770</span></div>
+              </div>
+              <div class="pay-block">
+                <div class="pay-text">運費</div>
+                <div class="pay-num"> <span class="unit">NT.</span><span class="total product-delivery-price">30</span></div>
+              </div>
+            </div>
+            <div class="pay-total">
+              <div class="pay-block">
+                <div class="pay-text">應付金額</div>
+                <div class="pay-num"> <span class="unit">NT.</span><span class="total pay-sumup">1800</span></div>
+              </div>
+            </div>
+            <button class="pay-btn disabled" type="submit"><span>確</span><span>認</span><span>付</span><span>款</span></button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-link"><a class="active first-nav-item" href="./index.html">關於 Stylish</a></li>
+            <li class="footer-nav-link"><a href="./index.html">服務條款</a></li>
+            <li class="footer-nav-link"><a href="./index.html">隱私政策</a></li>
+          </ul>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-link"><a href="./index.html">聯絡我們</a></li>
+            <li class="footer-nav-link"><a href="./index.html">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="footer-right">
+          <ul class="footer-social-icon-group">
+            <li class="footer-social-icon"><a href="./index.html"><img src="images/line.png" alt="line"/></a></li>
+            <li class="footer-social-icon"><a href="./index.html"><img src="images/twitter.png" alt="twitter"/></a></li>
+            <li class="footer-social-icon"><a href="./index.html"><img src="images/facebook.png" alt="facebook"/></a></li>
+          </ul>
+          <div class="copy-wright lg-copy-wright"><span>© 2018. All rights reserved.</span></div>
+        </div>
+        <div class="copy-wright sm-copy-wright"><span>© 2018. All rights reserved.  </span></div>
+      </div>
+    </footer>
+    <script src="js/logIn.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
+    <script src="js/cart/payment.js"></script>
+    <script src="js/cart/main.js"></script>
+  </body>
+</html>

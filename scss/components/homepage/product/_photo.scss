@@ -1,0 +1,21 @@
+//首頁商品圖
+.home-product-img {
+  width: 100%;
+  padding-bottom: 132%;
+  background-size: cover;
+  background-position: center center;
+  background-color: $decor-line;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+@media screen and (min-width: 768px) {
+  .home-product-img-wrap {
+    overflow: hidden;
+  }
+    .home-product-img {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+}

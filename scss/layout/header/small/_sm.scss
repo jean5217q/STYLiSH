@@ -1,0 +1,26 @@
+.sm-header {
+  background-color: $white;
+  position: relative;
+}
+//字體大小設定 em調整
+@media screen and (min-width: 576px) and(max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 359px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@import 'top',
+        'bottom',
+        'fixed',
+        'search'
+

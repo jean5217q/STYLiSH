@@ -1,0 +1,19 @@
+//圖片區域
+.product-img {
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+//圖文間距
+@media screen and (max-width: 767px) {
+  .product-img {
+    padding-bottom: 130%;
+    margin-right: 0;
+    margin-bottom: 3em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product-img {
+    margin-right: 2rem;
+  }
+}

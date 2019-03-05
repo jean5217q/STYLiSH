@@ -1,0 +1,90 @@
+//在哪裡
+.page-site-text {
+  color: $side-text;
+  font-size: 0.9em;
+  padding-bottom: 3em;
+}
+
+.cart-product-group {
+  @include flexy($dir: column);
+  width: 100%;
+  padding-bottom: 2em;
+}
+// 文字 48/16/16/16/7
+.lg-cart-title-group {
+  @include flexy($ais: center);
+  font-size: 15px;
+  padding-bottom: 16px;
+  .lg-cart-title {
+    &.cart-main-title {
+      width: 48%;
+      font-weight: bold;
+      color: $emphasize-text;
+    }
+    &.cart-num-title {
+      width: 15%;
+      text-align: center;
+    }
+    &.cart-ptice-title {
+      width: 15%;
+      text-align: center;
+    }
+    &.cart-total-title {
+      width: 15%;
+      text-align: center;
+    }
+    &.cart-blank {
+      width: 8%;
+    }
+  }
+}
+
+.lg-cart-item-group {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 1px solid $input-border;
+}
+.lg-cart-product-item {
+  @include flexy($ais: center);
+}
+.cart-item-left-info {
+  width: 48%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 1.5rem;
+  @include flexy;
+}
+//單個商品數量單價小計
+.lg-cart-item-num {
+  flex: 15%;
+  @include flexy($just: center);
+  select {
+    @include size($w: 80px,$h: 30px);
+    @include noneSlelect;
+  }
+  .style-select {
+    @include styleSelect($w: 80px,$h: 30px);
+  }
+}
+.lg-cart-item-price {
+  flex: 15%;
+  text-align: center;
+}
+.lg-cart-item-total {
+  flex: 15%;
+  text-align: center;
+}
+.lg-cart-item-delete {
+  flex: 8%;
+  @include flexy($just: center);
+  .delete-target {
+    font-size: 18px;
+    color: $input-border;
+    transition: 0.1s;
+    cursor: pointer;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+

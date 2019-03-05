@@ -1,0 +1,16 @@
+//購物車按鈕
+.add-cart-btn {
+  width: 100%;
+  background-color: $black;
+  font-size: 1rem; 
+  font-weight: 200;
+  letter-spacing: 0.2rem;
+  padding: 20px 8px;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+  &.disabled {
+    background-color: $light-black;
+    cursor: text;
+  }
+}

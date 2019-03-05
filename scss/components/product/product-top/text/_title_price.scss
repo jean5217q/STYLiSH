@@ -1,0 +1,25 @@
+//主標
+.product-main-head {
+  font-size: 1.6rem;
+  letter-spacing: 0.4rem;
+  padding-bottom: 0.8rem; 
+}
+// 商品編號
+.product-number {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  padding-bottom: 2rem;
+  color: $light-gray;
+}
+//價格
+.product-price {
+  font-size: 1.6rem;
+  letter-spacing: 0.4rem;
+  padding-bottom: 2.4rem;
+  @include after {
+    @include size(100%,1px);
+    @include absolute($l: 0,$t: 2.4rem);
+    background-color: $decor-line;
+  }
+}
+

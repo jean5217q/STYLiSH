@@ -1,0 +1,62 @@
+//商品外側置中
+.home-product-group {
+  width: 100%;
+  margin-bottom: 5%;
+  @include flexy($just: center);
+}
+//商品群組總覽
+.home-product-group-inner {
+  width: 100%; 
+  @include flexy($wrap: wrap,$ais: center);
+}
+
+@media screen and (max-width: 575px) {
+  .home-product-group {
+    padding: 0 6px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .home-product-group {
+    padding: 0 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home-product-group {
+    padding: 0 24px;
+  }
+  .home-product-group-inner {
+    max-width: 1080px; 
+  }
+}
+@media screen and (min-width: 1600px) {
+  .home-product-group-inner {
+    max-width: 1200px; 
+  }
+}
+
+
+
+
+.loader-wrap {
+  margin: 16px auto;
+  width: 100%;
+  text-align: center;
+  .loader-img {
+    width: 12vw;
+    max-width: 50px;
+  }
+} 
+.no-data {
+  width: 100%;
+  color: $text;
+  font-size: 16px;
+  padding: 10vh 0;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@import 'item',
+        'photo',
+        'color',
+        'text'
+

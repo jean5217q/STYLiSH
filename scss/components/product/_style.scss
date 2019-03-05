@@ -1,0 +1,52 @@
+//最外層控制頁面左右padding 內層置中 撐滿 
+.product-container {
+  @include flexy($just: center);
+  width: 100%;
+}  
+
+@media screen and (max-width: 576px) {
+  .product-container {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 767px) {
+  .product-container {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product-container {
+    padding: 0 36px;
+  }
+}
+
+//商品整體框 控制最大寬度 外側間距
+.product-inner {
+  width: 100%;
+  padding-bottom: 3.5rem;
+  @include flexy($dir: column); 
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .product-inner  {
+    padding-top: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .product-inner  {
+    max-width: 840px;
+    padding-top: 60px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .product-inner  {
+    max-width: 960px;
+  }
+}
+
+
+
+@import 'product-top/product-top',
+        'product-bottom/product-bottom',
+        'addCart'
+

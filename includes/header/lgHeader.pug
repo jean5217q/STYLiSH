@@ -1,0 +1,49 @@
+.lg-header
+  .lg-header-inner
+    .lg-header-left
+      a.lg-header-logo(href="/?category=all")
+        img(
+          src="images/logo.svg", 
+          alt="header-logo")
+      nav.lg-header-nav
+        ul.lg-nav-list
+          li.lg-nav-item
+            a.lg-nav-link.js-link(
+              href="./index.html?category=women" 
+              data-cata="women") 
+              span 女
+              span 裝
+              .nav-indicator(data-cata="women")
+          li.lg-nav-item
+            a.lg-nav-link.js-link(
+              href="./index.html?category=men" 
+              data-cata="men") 
+              span 男
+              span 裝
+              .nav-indicator(data-cata="men")
+          li.lg-nav-item
+            a.lg-nav-link.js-link(
+              href="./index.html?category=accessories" 
+              data-cata="accessories") 
+              span 配
+              span 件
+              .nav-indicator(data-cata="accessories") 
+    .lg-header-right
+      form.lg-searchbar.form-container
+        input.lg-search-input.search-input(type="text")
+        button.lg-search-btn-wrap(type="submit")
+          img.lg-search-logo.search-btn(
+            src="images/search.png", 
+            alt="search")
+      a.lg-icon-btn.header-user-cart(href="./cart.html")
+        //- .lg-icon-img.cart-img
+        .cart-num-wrap
+          span.cart-num
+      button.lg-icon-btn.header-user-login(scope="public_profile,email")
+      button.lg-icon-btn.header-user-photo(scope="public_profile,email")
+      ul.dropdown-list
+        li.dropdown-item
+          a.drop-down-link(href="./profile.html") 帳戶管理
+        li.dropdown-item
+          button.drop-down-link.to-logout-btn 登出
+  .lg-header-decoration

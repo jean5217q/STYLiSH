@@ -1,0 +1,109 @@
+//hero-image整體
+.hero-image-group {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  margin-bottom: 3.65%; //與下方section距離
+}
+// 長條
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  font-size: 0px;
+  white-space: nowrap;
+  &.time {
+    transition: 0.2s;
+  }
+}
+//單張輪播
+.hero-image-area {
+  position: relative;
+  display: inline-block;
+  width: 100%; 
+  font-size: 16px;
+  background-color: #e2e2e2;
+  cursor: pointer;
+}
+//hero-image圖片
+.hero-image {
+  background-color: $decor-line;
+  background-position: center center;
+  background-size: cover;
+}
+@media screen and (max-width: 575px) {
+  .hero-image {
+    padding-bottom: calc(150px + 15%);
+  }
+}
+@media screen and (min-width: 576px) {
+  .hero-image {
+    padding-bottom: calc(200px + 15%);
+  }
+}
+
+//hero-image文字
+.hero-text {
+  transform: translateY(-50%);
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: $emphasize-text;
+  .main-text {
+    span {
+      font-size: calc(12px + 0.95vw); //文字基本大小加拉伸
+      padding-bottom: calc(12px + 0.95vw);
+      display: block;
+      &:last-child {
+        padding-bottom: calc(14px + 0.95vw);
+      }
+    }
+  }
+}
+
+//小字微調 整體文字位置
+@media screen and (max-width: 576px) {
+  .hero-text {
+    @include absolute($l: 6%,$t: 50%);
+    .sub-text {
+      font-size: calc(4px + 1.5vw);
+    }
+  }
+}
+@media screen and (min-width: 577px) {
+  .hero-text {
+    @include absolute($l: 20%,$t: 50%);
+    .sub-text {
+      font-size: calc(10px + 0.52vw);
+    }
+  }
+}
+//點區域
+.dot-wrap {
+  @include absolute($l: 50%,$b: 16px);
+  transform: translateX(-50%);
+  @include flexy($ais: center);
+  .dot {
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    &.active {
+      background-color: $primary;
+    }
+  }
+}
+//調整點大小
+@media screen and (max-width: 575px) {
+  .dot-wrap .dot {
+    @include size(8px,8px); 
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 959px) {
+  .dot-wrap .dot {
+    @include size(10px,10px); 
+  }
+}
+@media screen and (min-width: 960px) {
+  .dot-wrap .dot {
+    @include size(12px,12px); 
+  }
+}

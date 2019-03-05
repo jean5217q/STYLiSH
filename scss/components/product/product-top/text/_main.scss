@@ -1,0 +1,28 @@
+//文字區外框
+.product-text {
+  width: 40%;
+  color: $text;
+  flex-shrink: 0;
+  @include flexy($dir: column); 
+}
+@media screen and (max-width: 767px) {
+  .product-text {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .product-text {
+    width: 45%;
+  }
+}
+
+// 主要選擇區域與附註文的距離
+.product-text-top {
+  padding-bottom: 2rem;
+}
+
+
+@import './title_price',
+        './color_size_num',
+        './cart',
+        './explain'

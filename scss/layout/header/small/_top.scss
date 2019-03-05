@@ -1,0 +1,37 @@
+//上半部全
+.sm-header-top {
+  @include flexy($just: center,$ais: center);
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 359px) {
+  .sm-header-top {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 575px) {
+  .sm-header-top {
+    height: 56px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .sm-header-top {
+    height: 60px;
+  }
+}
+//logo
+.sm-header-logo img {
+  height: 1.75rem;
+}
+
+//搜尋按鈕
+.sm-search-btn-decor {
+  cursor: pointer;
+  @include absolute($t: 50%,$r: 3vw);
+  transform: translateY(-50%);
+  img {
+    width: 2rem;
+  }
+}
+

@@ -1,0 +1,51 @@
+.sm-cart-title-group {
+  padding-bottom: 12px;
+}
+
+.sm-cart-product-item {
+  border-top: 1px solid $input-border;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &:last-child {
+    border-top: 1px solid $input-border;
+    border-bottom: 1px solid $input-border;
+  }
+}
+
+.cart-item-top-info {
+  @include flexy;
+  padding-bottom: 20px;
+}
+
+.sm-cart-item-delete {
+  margin-left: auto;
+  .delete-target {
+    font-size: 18px;
+    color: $input-border;
+    transform: translateX(-8px)
+  }
+}
+
+.cart-item-bottom-info {
+  @include flexy($dir: column);
+}
+.cart-item-bottom-block {
+  @include flexy($ais: center);
+}
+.cart-item-bottom-title {
+  flex: 1;
+  padding-bottom: 8px;
+  text-align: center;
+}
+.cart-item-bottom-value {
+  flex: 1;
+  @include flexy($just: center)
+}
+select {
+  @include size($w: 80px,$h: 28px);
+  @include noneSlelect;
+  font-size: 1em;
+}
+.style-select {
+  @include styleSelect($w: 80px,$h: 28px);
+}
