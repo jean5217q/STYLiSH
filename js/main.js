@@ -111,10 +111,6 @@ function getCartTotal(){
   const numWrap = document.querySelectorAll('.cart-num-wrap')
   const num = document.querySelectorAll('.cart-num')
   const quantity = cartArray.map(el=>el.qty)
-  if(!isLogin) {
-    numWrap.forEach(el=>el.classList.remove('show'))
-  }
-  else {
     let total = quantity.reduce((acc,cur)=>{
       return acc + cur
     },0)
@@ -126,7 +122,7 @@ function getCartTotal(){
       numWrap.forEach(el=>el.classList.remove('show'))
       num.forEach(el=>el.textContent='')
     }
-  }
+
 }
 
 //-----loader相關-----//
