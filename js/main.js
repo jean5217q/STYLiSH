@@ -19,7 +19,6 @@ const starterLoader = document.querySelector('.page-load-container')
 // 帶參數情況=>複用模板(類別/搜索)(單一商品)
 if(query) {
   if(query.indexOf('?search?keyword=')!==-1) {
-    if(path!=='/') window.location.pathname='/' 
     cataUrl = `${query.split('').splice(1).join('')}&`
     starterLoader.style.display = 'none'
   }
