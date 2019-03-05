@@ -1,5 +1,6 @@
 //網頁內文與header間距
 .main-container {
+  opacity: 0;
   @include flexy($dir: column,$ais: center);
 }
 @media screen and (max-width: 359px) {

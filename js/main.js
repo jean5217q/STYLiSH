@@ -141,21 +141,32 @@ function clearLoader(){
 //轉場動畫函式
 // let transOpacity = 1
 
-let transOpacity = null
-const width = window.innerWidth 
-if(width<575) transOpacity = 0.5
-else transOpacity = 1
+// let transOpacity = null
+// const width = window.innerWidth 
+// if(width<575) transOpacity = 0.5
+// else transOpacity = 1
+// function pageTransitionAnimate() {
+//   const transLayout = document.querySelector('.transition-layout')
+//   transOpacity = transOpacity-0.08
+//   transLayout.style.opacity = `${transOpacity}`
+//   if(transOpacity<0) {
+//     transLayout.style.display = 'none'
+//     return
+//   }
+//   requestAnimationFrame(pageTransitionAnimate)
+// }
+// console.log(window.innerWidth)
+let transOpacity = 0
 function pageTransitionAnimate() {
-  const transLayout = document.querySelector('.transition-layout')
-  transOpacity = transOpacity-0.08
-  transLayout.style.opacity = `${transOpacity}`
-  if(transOpacity<0) {
-    transLayout.style.display = 'none'
+  // const transLayout = document.querySelector('.transition-layout')
+  transOpacity = transOpacity+0.05
+  container.style.opacity = `${transOpacity}`
+  if(transOpacity>100) {
+    // transLayout.style.display = 'none'
     return
   }
   requestAnimationFrame(pageTransitionAnimate)
 }
-console.log(window.innerWidth)
 
 
 
