@@ -144,7 +144,8 @@ function pageTransitionAnimate() {
   const transLayout = document.querySelector('.transition-layout')
   const width = window.innerWidth
   if(width<575) {
-    transOpacity = transOpacity-0.1
+
+    transOpacity = transOpacity-0.25
   }
   else {
     transOpacity = transOpacity-0.03
