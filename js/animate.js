@@ -1,12 +1,12 @@
 /* 
 漸層視覺上的變化
 (black,white 100%) => 漸層黑到白的中間點(黑白各半)
-(black 100%, white) => 全黑
+(black 100%, white) => 全白
 
 分兩組動畫執行
 01.執行全白到黑白各半
-02.執行黑白各半到全黑
-(一次執行完整個字的完整動畫太過緩慢=>執行到一半時呼叫下個字的動畫)
+02.執行黑白各半到全白
+(一次執行完整字的完整動畫太過緩慢=>執行到一半時呼叫下個字的動畫)
 !!只能呼叫一次第二個動畫一次
 */ 
 
@@ -46,7 +46,7 @@ window.onload = () => {
 function gradientAnimate1() {
   initValue1++
   let v = initValue1*speed
-  const d = document.querySelector(`.page-load-word[data-index="${id1}"]`)
+  // const d = document.querySelector(`.page-load-word[data-index="${id1}"]`)
   const animateWord = document.querySelector(`.text2[data-index="${id1}"]`)
   const Wordanimate = document.querySelector(`.text1[data-index="${id1}"]`)
   Wordanimate.style.stopColor = 'white'

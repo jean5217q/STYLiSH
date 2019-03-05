@@ -1,20 +1,22 @@
+/* exported  container body initUrl searchBtn createLoader clearLoader pageTransitionAnimate*/
+
 //設置locakstorage
 if(!localStorage.getItem('product')) {
   let storage = []
   localStorage.setItem('product',JSON.stringify(storage))
 }
-
+// API
 const baseUrl = 'https://api.appworks-school.tw/api/1.0/products'
 let cataUrl = null
+
+// HREF
 let query = window.location.search //含問號之後
 let path = window.location.pathname //資料夾
+// RENDER
 const container = document.querySelector('.main-container') // 頁面初始化loader父層
 const body = document.querySelector('body')
 const starterLoader = document.querySelector('.page-load-container')
 
-// 首頁=>/
-// 類別=>?category=
-// 搜尋=>?search?
 
 // 帶參數情況=>複用模板(類別/搜索)(單一商品)
 if(query) {
@@ -43,7 +45,7 @@ else if(path==='/STYLiSH/') {
 
 let initUrl = `${baseUrl}/${cataUrl}`
 
-//頁面初始
+//頁面初始(要改成login後才可以看到購物車內商品數)
 function pageInit() {
   getCartTotal()
 }
@@ -51,12 +53,12 @@ pageInit()
 
 // -----header相關控制項-----//
 // 切換active類別CSS樣式
-const allLink = document.querySelectorAll('.js-link')
-const allIndicator = document.querySelectorAll('.nav-indicator')
-allLink.forEach(el=>{
+const cataLink = document.querySelectorAll('.js-link')
+const cataIndicator = document.querySelectorAll('.nav-indicator')
+cataLink.forEach(el=>{
   if(el.dataset.cata===cataUrl) el.classList.add('active')  
 })
-allIndicator.forEach(el=>{
+cataIndicator.forEach(el=>{
   if(el.dataset.cata===cataUrl) el.classList.add('active')
 })
 
@@ -70,16 +72,9 @@ const form = document.querySelectorAll('.form-container')
 
 //搜索框聚焦
 input.forEach(el=>el.focus())
-
-
-//滑鼠搜尋
+//form表單提交(預設包含滑鼠與keyboard)
 form.forEach(el=>el.addEventListener('submit',searchHandler))
-//鍵盤搜尋
-// document.addEventListener('keypress',function(evt){
-//   if(evt.keyCode === 13 || evt.which === 13){
-//     searchHandler(evt)
-//   } 
-// })
+
 //搜索
 function searchHandler(e) {
   e.preventDefault()
@@ -89,7 +84,6 @@ function searchHandler(e) {
   })
   if(!search) return
   window.location.href = `index.html?search?keyword=${search}`
-  input.forEach(el => el.value = '')
 }
 
 //顯示搜索
@@ -124,7 +118,7 @@ function getCartTotal(){
 
 }
 
-//-----loader相關-----//
+//-----下滑載入loader-----//
 //loader
 function createLoader(){
   const loaderWrap = document.createElement('div')
@@ -164,7 +158,7 @@ const decorationBar = document.querySelector('.lg-header-decoration')
 // const banner = document.querySelector('.hero-image-wrap')
 window.addEventListener('scroll',headerHander)
 
-function headerHander(e){
+function headerHander(){
   const headerHeight = header.clientHeight
   if(scrollY>headerHeight) {
     decorationBar.classList.add('decrease-bar')
@@ -183,11 +177,3 @@ function headerHander(e){
   
 }
 
-
-// const logo = document.querySelector('.lg-header-logo')
-// logo.addEventListener('click',function(e) {
-//   e.preventDefault()
-//   starterLoader.style.display = 'none'
-//   window.location.href = '/'
-//   console.log('f')
-// })

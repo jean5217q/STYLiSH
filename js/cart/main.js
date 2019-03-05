@@ -1,3 +1,5 @@
+/*global baseUrl pageTransitionAnimate getCartTotal */
+
 const pcWrap = document.querySelector('.lg-cart-item-group') 
 const smWrap = document.querySelector('.sm-cart-item-group')  
 const cartContainer = document.querySelector('.cart-inner')
@@ -51,19 +53,19 @@ function findStock() {
   return stockArray
 }
 //有變動時確認庫存並重新渲染option(未完成)
-function renderStock() {
-  const storage = JSON.parse(localStorage.getItem('product'))
-  const stock = findStock() 
-  const qty = storage.map(el=>el.qty)
-  const pcSelect = document.querySelectorAll('.lg-select')
-  const mbSelect = document.querySelectorAll('.sm-select')
-  pcSelect.forEach((el,index)=>{
-    createOption(stock,index,qty[index],el)
-  })
-  mbSelect.forEach((el,index)=>{
-    createOption(stock,index,qty[index],el)
-  })
-}
+// function renderStock() {
+//   const storage = JSON.parse(localStorage.getItem('product'))
+//   const stock = findStock() 
+//   const qty = storage.map(el=>el.qty)
+//   const pcSelect = document.querySelectorAll('.lg-select')
+//   const mbSelect = document.querySelectorAll('.sm-select')
+//   pcSelect.forEach((el,index)=>{
+//     createOption(stock,index,qty[index],el)
+//   })
+//   mbSelect.forEach((el,index)=>{
+//     createOption(stock,index,qty[index],el)
+//   })
+// }
 
 //創建數量option
 function createOption(array,index,qty,parent) {

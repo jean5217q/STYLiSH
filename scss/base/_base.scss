@@ -27,6 +27,17 @@ img {
   vertical-align: middle;
 }
 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover
+input:-webkit-autofill:focus
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px white inset;
+  border: 1px solid #ccc!important;
+}
+
+
+
 @media screen and (max-width: 575px) {
   html {
     font-size: 14px;

@@ -1,9 +1,10 @@
+/* exported res */
+/* global FB getCartTotal*/
 let fBaccessToken = null
 let isLogin = false
-
+//電腦
 const drop = document.querySelector('.dropdown-list')
 const logInBtn = document.querySelector('.header-user-login')
-
 const userPhoto = document.querySelector('.header-user-photo')
 const logOutBtn = document.querySelector('.to-logout-btn')
 //手機
@@ -19,9 +20,7 @@ function checkLoginState() {
 
 //依據狀態執行事件
 function statusChangeCallback(response) {
-  console.log(response)
   if (response.status === 'connected') {
-    console.log(response)
     fBaccessToken = response.authResponse.accessToken
     isLogin = true
     const user = {
@@ -40,7 +39,7 @@ function statusChangeCallback(response) {
 }
 
 //發送訂單資料並取回訂單編號
-function Userfetch(obj,res) {
+function Userfetch(obj) {
   const url = `https://api.appworks-school.tw/api/1.0/user/signin`
   fetch(url,{
     method: 'Post',
@@ -51,7 +50,6 @@ function Userfetch(obj,res) {
   })
   .then(res=>res.json())
   .then(json=>{
-    console.log(json)
     const user = json.data.user
     const {name,email,picture} = user
     userPhoto.style.backgroundImage = `url(${picture})`
@@ -83,14 +81,12 @@ function renderLogStatusHander() {
 }
 
 
-
-
 //沒有登入時會有的動作
 function beforeLogInEventHandler() {
   logInBtn.addEventListener('click',logInHandler)
   smLogInBtn.addEventListener('click',logInHandler)
-  function logInHandler(response) {
-    FB.login(function(response){
+  function logInHandler() {
+    FB.login(function(){
       checkLoginState()
     },{ scope: 'email,public_profile'})
   }
@@ -112,7 +108,6 @@ function afterLogInEventHandler(res) {
   //登出按鈕
   const smLogOutBtn = document.querySelector('.sm-user-logout')
   if(smLogOutBtn) {
-    console.log('')
     smLogOutBtn.addEventListener('click',logOutHandler)
   }
   logOutBtn.addEventListener('click',logOutHandler)
@@ -121,7 +116,7 @@ function afterLogInEventHandler(res) {
       FB.api(`/me/permissions`,"DELETE",function(res) {
         console.log(res)
       }) 
-      FB.logout(function (response) {  
+      FB.logout(function () {  
         isLogin = false
         renderLogStatusHander()
         beforeLogInEventHandler()
@@ -134,10 +129,6 @@ function afterLogInEventHandler(res) {
   }
 }
 //HOVER
-//LOGIN後顯示購物車數字 進入購物車 購買商品
-//購物車登出重新導向
-//firebase
-//let photo = `http://graph.facebook.com/${res.id}/picture?type=large`
 // function getUserInfo() {
 //   FB.api('/me', {
 //     // access_token: accessToken,

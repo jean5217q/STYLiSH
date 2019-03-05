@@ -1,3 +1,5 @@
+/* global initUrl pageTransitionAnimate query getCartTotal body*/
+
 fetchHandler(initUrl)
 async function fetchHandler(url) {
   // ajax

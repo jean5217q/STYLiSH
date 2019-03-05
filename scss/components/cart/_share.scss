@@ -114,6 +114,43 @@
   padding: 30px ;
 } 
 
+//付款中的框
+.paying-box-layout {
+  @include fixed($t: 0,$l: 0);
+  @include size(100vw,100%);
+  background-color: $text;
+  opacity: 0.8;
+  display: none;
+}
+.paying-box {
+  width: 300px;
+  @include fixed($t: 50%,$l: 50%);
+  transform: translate(-50%,-50%);
+  border: 1px solid $input-border;
+  padding: 20px;
+  background-color: $white;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.15);
+  display: none;
+}
+.paying-box-inner {
+  padding: 20px;
+}
+.paying-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.paying-loading-bar {
+  @include size(100%,8px);
+  background-color: $input-border;
+  padding: 1px;
+  @include flexy($ais: center)
+}
+.paying-loading-bar-inner {
+  width: 0;
+  height: 8px;
+  background-color: gray;
+}
 
 @import 'smCartList',
         'lgCartList',

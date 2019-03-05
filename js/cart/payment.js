@@ -1,3 +1,5 @@
+/*global TPDirect productPrice deliveryPrice totalPrice fBaccessToken*/
+
 let WarnNumber = document.querySelector('.card-number-warm') //卡號
 let WarmExpiration = document.querySelector('.card-expiration-warm')//到期日
 let WarnCcv = document.querySelector('.card-ccv-warm') //ccv
@@ -7,6 +9,10 @@ let FoemDataReady = false //表格資訊是否完整
 let CardReady = false
 let orderTime = null
 let orderNumber = null
+
+const payboxLayout = document.querySelector('.paying-box-layout')
+const paybox = document.querySelector('.paying-box')
+const loadingbar = document.querySelector('.paying-loading-bar-inner')
 
 if(!localStorage.getItem('order')) {
   localStorage.setItem('order',JSON.stringify([]))
@@ -114,8 +120,6 @@ function onSubmit() {
 }
 
 
-
-
 //付款控制
 const Payform = document.querySelector('.pay-area')
 Payform.addEventListener('submit',payHandler)
@@ -124,6 +128,9 @@ function payHandler(e) {
   e.preventDefault()
   ckeckInputData()
   if(!FoemDataReady) return
+  payboxLayout.style.display = 'block'
+  paybox.style.display = 'block'
+  requestAnimationFrame(loadingBarAnimation)
   onSubmit()
   getTime()
   localStorage.setItem('product',JSON.stringify([]))
@@ -132,7 +139,6 @@ function payHandler(e) {
 //post 資料
 function getUserDetail(key) {
   const deliveryCountry = document.querySelector('select.country').value
-  const deliveryWay = document.querySelector('select.payway').value
   const consumer = document.querySelector('#name').value
   const phone = document.querySelector('#phone').value
   const email = document.querySelector('#email').value
@@ -221,6 +227,7 @@ function postProductInfo(obj) {
     method: 'Post',
     headers: {
       'Content-Type': 'application/json',
+      'Authorization': `Bearer ${fBaccessToken}`
     },
     body: JSON.stringify(obj)
   })
@@ -265,9 +272,13 @@ function getTime() {
   const hour = now.getHours()
   let minute = now.getMinutes()
   if(minute<10) minute = `0${minute}`
-  console.log(minute)
   orderTime = `${year}/${month}/${date} ${hour}:${minute}`
 }
-
-getTime()
+let loadingBarPercent = 0
+function loadingBarAnimation() {
+  loadingBarPercent++
+  loadingbar.style.width = `${loadingBarPercent*1.5}%`
+  requestAnimationFrame(loadingBarAnimation)
+  if(loadingBarPercent*1.5>=100) return
+}
 

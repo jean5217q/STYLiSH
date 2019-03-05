@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-135621282-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-135621282-1');
+    </script>
+    <!-- Google Analytics-->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>STYLiSH</title>
+    <meta name="keywords" content="stylish"/>
+    <meta name="description" content="stylish 女裝 男裝 配件 文藝 質感 服裝"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900" rel="stylesheet"/>
     <link rel="stylesheet" href="style/style.css"/>
@@ -229,6 +240,16 @@
             </div>
             <button class="pay-btn disabled" type="submit"><span>確</span><span>認</span><span>付</span><span>款</span></button>
           </form>
+        </div>
+      </div>
+      <!-- paying box //-->
+      <div class="paying-box-layout"></div>
+      <div class="paying-box">
+        <div class="paying-box-inner">
+          <div class="paying-title">付款中...</div>
+          <div class="paying-loading-bar">
+            <div class="paying-loading-bar-inner"></div>
+          </div>
         </div>
       </div>
     </main>

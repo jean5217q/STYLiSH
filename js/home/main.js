@@ -1,3 +1,4 @@
+/*global initUrl clearLoader baseUrl cataUrl createLoader pageTransitionAnimate */
 let pagingUrl = null //滾動fetch網址
 let isScroll = true //是否滾動
 const productWrap = document.querySelector('.home-product-group-inner') //商品清單父層
