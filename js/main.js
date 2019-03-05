@@ -155,7 +155,7 @@ const width = window.innerWidth
 //   requestAnimationFrame(pageTransitionAnimate)
 // }
 // console.log(window.innerWidth)
-if(width<575) transOpacity = 0.5
+if(width<575) transOpacity = 0.7
 else transOpacity = 0
 function pageTransitionAnimate() {
   // const transLayout = document.querySelector('.transition-layout')
