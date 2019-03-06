@@ -270,6 +270,7 @@ function getTime() {
   const date = now.getDate()
   const hour = now.getHours()
   let minute = now.getMinutes()
+  if(hour<10) hour = `0${hour}`
   if(minute<10) minute = `0${minute}`
   orderTime = `${year}/${month}/${date} ${hour}:${minute}`
 }
