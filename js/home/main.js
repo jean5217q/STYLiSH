@@ -7,10 +7,9 @@ const windowHeight = document.documentElement.clientHeight //視窗高度
 
 //初始化
 function pageInit() {
-  if(WinWidth<576) {
-    container.style.opacity=1
-    createMobileLoader()
-  }
+
+  container.style.opacity=1
+  createMobileLoader()
   fetchHandler(initUrl)
 }
 pageInit()

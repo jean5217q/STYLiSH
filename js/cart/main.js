@@ -7,10 +7,10 @@ let url = `${baseUrl}/all`
 let all = []
 // 從資料庫取得商品=>找尋購物車商品庫存=>庫存render在option中=>更改數量
 // 合併主頁與分頁的商品=>得到全部的商品陣列=>頁面動作
-if(WinWidth<576) {
+
   container.style.opacity=1
   createMobileLoader()
-}
+
 
 
 async function initCart(url) {

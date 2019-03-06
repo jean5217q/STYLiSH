@@ -1,9 +1,9 @@
 /* global initUrl pageTransitionAnimate query getCartTotal body*/
 
-if(WinWidth<576) {
+
   container.style.opacity=1
   createMobileLoader()
-}
+
 fetchHandler(initUrl)
 async function fetchHandler(url) {
   // ajax
