@@ -80,7 +80,6 @@ function renderLogStatusHander() {
   }
 }
 
-
 //沒有登入時會有的動作
 function beforeLogInEventHandler() {
   logInBtn.addEventListener('click',logInHandler)

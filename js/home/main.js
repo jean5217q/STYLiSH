@@ -72,7 +72,7 @@ function render(data) {
       let colorBlock = document.createElement('a')
       colorBlock.className = 'color-block'
       colorBlock.style.backgroundColor = `#${color.code}`
-      colorBlock.setAttribute('href',`/product.html?id=${el.id}&color=${color.code}`) 
+      colorBlock.setAttribute('href',`./product.html?id=${el.id}&color=${color.code}`) 
       colorGroup.appendChild(colorBlock)
     })
     //商品標籤

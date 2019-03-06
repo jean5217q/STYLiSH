@@ -172,7 +172,7 @@ function createMobileLoader() {
   loaderContainer.className = 'transition-loader-container'
   loaderContainer.appendChild(loader)
   container.appendChild(loaderContainer)
-  body.style.overflow = 'hidden'
+  // body.style.overflow = 'hidden'
 }
 
 function removeMobileLoader() {

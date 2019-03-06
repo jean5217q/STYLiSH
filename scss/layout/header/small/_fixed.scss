@@ -13,6 +13,7 @@
 //固定內容物調整
 .sm-fixed-block {
   flex: 1;
+  line-height: 1;
   @include flexy($just: center,$ais: center);
   @include font($space: 1px,$weight: 100);
   height: calc(3rem + 5px);
@@ -30,9 +31,9 @@
   &.sm-header-user-member {
     display: none;
   }
-  // &.header-user-login {
-
-  // }
+  &.sm-header-user-login {
+    padding: 0;
+  }
   .sm-fixed-img-wrap {
     position: relative;
   }
@@ -45,5 +46,3 @@
     }
   }
 }
-
-

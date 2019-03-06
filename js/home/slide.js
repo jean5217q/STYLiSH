@@ -28,6 +28,7 @@
     //圖片元素
     const heroImg = document.createElement('div')
     heroImg.className='hero-image'
+    heroImg.style.backgroundColor='white'
     heroImg.style.backgroundImage = 
     `linear-gradient(90deg,white,transparent 60%), 
     url('https://api.appworks-school.tw${data[id].picture}')` 
@@ -292,8 +293,6 @@
     }
   }
 })()
-
-
 
 
 

@@ -674,6 +674,7 @@ header {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -710,6 +711,10 @@ header {
 
 .sm-fixed-block.sm-header-user-member {
   display: none;
+}
+
+.sm-fixed-block.sm-header-user-login {
+  padding: 0;
 }
 
 .sm-fixed-block .sm-fixed-img-wrap {
