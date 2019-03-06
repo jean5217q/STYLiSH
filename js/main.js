@@ -139,30 +139,14 @@ function clearLoader(){
 }
 
 //轉場動畫函式
-// let transOpacity = 1
-
-// let transOpacity = null
 const width = window.innerWidth 
 
-// function pageTransitionAnimate() {
-//   const transLayout = document.querySelector('.transition-layout')
-//   transOpacity = transOpacity-0.08
-//   transLayout.style.opacity = `${transOpacity}`
-//   if(transOpacity<0) {
-//     transLayout.style.display = 'none'
-//     return
-//   }
-//   requestAnimationFrame(pageTransitionAnimate)
-// }
-// console.log(window.innerWidth)
-if(width<575) transOpacity = 0.7
+if(width<575) transOpacity = 0.8
 else transOpacity = 0
 function pageTransitionAnimate() {
-  // const transLayout = document.querySelector('.transition-layout')
   transOpacity = transOpacity+0.05
   container.style.opacity = `${transOpacity}`
   if(transOpacity>1) {
-    // transLayout.style.display = 'none'
     return
   }
   requestAnimationFrame(pageTransitionAnimate)
@@ -172,7 +156,6 @@ function pageTransitionAnimate() {
 
 const header = document.querySelector('.lg-header')
 const decorationBar = document.querySelector('.lg-header-decoration')
-// const banner = document.querySelector('.hero-image-wrap')
 window.addEventListener('scroll',headerHander)
 
 function headerHander(){
@@ -183,14 +166,5 @@ function headerHander(){
   else {
     decorationBar.classList.remove('decrease-bar')
   }
-  // const bannerBottom = banner.getBoundingClientRect().bottom
-  // console.log(bannerBottom<=headerHeight)
-  // if(bannerBottom<=headerHeight) {
-  //   header.classList.add('shadow')
-  // }
-  // else {
-  //   header.classList.remove('shadow')
-  // }
-  
 }
 

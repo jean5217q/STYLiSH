@@ -1143,8 +1143,8 @@ main {
   height: 300px;
   overflow-x: hidden;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(60%, transparent));
-  background-image: linear-gradient(90deg, white, transparent 60%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#808080), to(#808080));
+  background-image: linear-gradient(#808080, #808080);
   margin-bottom: 3.65%;
 }
 
@@ -1452,6 +1452,12 @@ main {
 
 .home-product-title {
   padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 575px) {
+  .home-product-title, .home-product-price {
+    font-size: 0.86rem;
+  }
 }
 
 .product-container {
