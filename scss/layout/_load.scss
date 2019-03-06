@@ -16,6 +16,13 @@
   @include absolute($t: 50%,$l: 50%);
   transform: translate(-50%,-50%);
 }
+
+@media screen and (max-width: 575px) {
+  .page-load-contents {
+    @include absolute($t: 40%,$l: 50%);
+    transform: translate(-50%,0%);
+  }
+}
 .page-load-word-container {
   position: relative;
 }

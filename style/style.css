@@ -3425,6 +3425,16 @@ select {
           transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 575px) {
+  .page-load-contents {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+}
+
 .page-load-word-container {
   position: relative;
 }
