@@ -127,7 +127,8 @@ Payform.addEventListener('submit',payHandler)
 function payHandler(e) {
   e.preventDefault()
   ckeckInputData()
-  if(!FoemDataReady) return
+  console.log(FoemDataReady)
+  if(payBtn.classList.contains('disabled')) return
   payboxLayout.style.display = 'block'
   paybox.style.display = 'block'
   requestAnimationFrame(loadingBarAnimation)
@@ -256,11 +257,9 @@ function checkPayBtn() {
   ckeckInputData() 
   if(FoemDataReady&&CardReady) {
     payBtn.classList.remove('disabled')
-    Payform.addEventListener('submit',payHandler)
   }
   else {
     payBtn.classList.add('disabled')
-    Payform.removeEventListener('submit',payHandler)
   }
 }
 

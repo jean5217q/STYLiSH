@@ -5,9 +5,14 @@ const smWrap = document.querySelector('.sm-cart-item-group')
 const cartContainer = document.querySelector('.cart-inner')
 let url = `${baseUrl}/all`
 let all = []
-
 // 從資料庫取得商品=>找尋購物車商品庫存=>庫存render在option中=>更改數量
 // 合併主頁與分頁的商品=>得到全部的商品陣列=>頁面動作
+if(WinWidth<576) {
+  container.style.opacity=1
+  createMobileLoader()
+}
+
+
 async function initCart(url) {
   let res = await fetch(url)
   let jsonData = await res.json()
@@ -19,10 +24,11 @@ async function initCart(url) {
     initCart(u)
   }
   else {
+    if(WinWidth>575) requestAnimationFrame(pageTransitionAnimate)
     const storageData = JSON.parse(localStorage.getItem('product'))
+    removeMobileLoader()
     if(storageData.length===0) {
       noProduct()
-      requestAnimationFrame(pageTransitionAnimate)
       return
     }
     console.log(all)
@@ -30,7 +36,6 @@ async function initCart(url) {
     findStock()
     pcRender(storageData)
     mobileRender(storageData)
-    requestAnimationFrame(pageTransitionAnimate)
     calcTotalPrice()
     numChange()
     deleteProduct()

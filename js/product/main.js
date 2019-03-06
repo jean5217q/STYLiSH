@@ -1,5 +1,9 @@
 /* global initUrl pageTransitionAnimate query getCartTotal body*/
 
+if(WinWidth<576) {
+  container.style.opacity=1
+  createMobileLoader()
+}
 fetchHandler(initUrl)
 async function fetchHandler(url) {
   // ajax
@@ -7,8 +11,9 @@ async function fetchHandler(url) {
   const json = await res.json()
   const data = json.data
   const variants = data.variants
+  removeMobileLoader()
   render(data)
-  requestAnimationFrame(pageTransitionAnimate)
+  if(WinWidth>575) requestAnimationFrame(pageTransitionAnimate)
   cartHandler(variants,data) 
 }
 

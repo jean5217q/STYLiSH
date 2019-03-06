@@ -11,7 +11,7 @@
 @media screen and (max-width: 575px) {
   .color-block {
     @include size(1.2rem,1.2rem);
-    margin-right: 0.6rem;
+    margin-right: 0.4rem;
   }
 }
 @media screen and (min-width: 576px) {

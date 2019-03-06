@@ -16,7 +16,7 @@ let path = window.location.pathname //資料夾
 const container = document.querySelector('.main-container') // 頁面初始化loader父層
 const body = document.querySelector('body')
 const starterLoader = document.querySelector('.page-load-container')
-
+const WinWidth = window.innerWidth 
 
 // 帶參數情況=>複用模板(類別/搜索)(單一商品)
 if(query) {
@@ -119,32 +119,13 @@ function getCartTotal(){
 }
 
 //-----下滑載入loader-----//
-//loader
-function createLoader(){
-  const loaderWrap = document.createElement('div')
-  loaderWrap.className = 'loader-wrap'
-  const loader = document.createElement('img')
-  loader.className = 'loader-img'
-  loader.setAttribute("src",`images/loading.gif`) 
-  loaderWrap.appendChild(loader) 
-  return loaderWrap 
-}
-
-//清除loader
-function clearLoader(){
-  const loader = document.querySelector('.loader-wrap')
-  if(loader) {
-    loader.parentNode.removeChild(loader)
-  }
-}
 
 //轉場動畫函式
-const width = window.innerWidth 
 
-if(width<575) transOpacity = 0.8
-else transOpacity = 0
+
+let transOpacity = 0
 function pageTransitionAnimate() {
-  transOpacity = transOpacity+0.05
+  transOpacity = transOpacity+0.03
   container.style.opacity = `${transOpacity}`
   if(transOpacity>1) {
     return
@@ -168,3 +149,36 @@ function headerHander(){
   }
 }
 
+function createNewLoader() {
+  const loaderwrap = document.createElement('div')
+  loaderwrap.className = 'transition-loader'
+  const loader = document.createElement('div')
+  loader.className = 'transition-loader-circle'
+  loaderwrap.appendChild(loader)
+  return loaderwrap
+}
+
+function removeLoader() {
+  const loader = document.querySelector('.transition-loader.scroll')
+  if(loader) {
+    loader.parentNode.removeChild(loader)
+  }
+}
+
+function createMobileLoader() {
+  const loader = createNewLoader()
+  loader.classList.add('page')
+  const loaderContainer = document.createElement('div')
+  loaderContainer.className = 'transition-loader-container'
+  loaderContainer.appendChild(loader)
+  container.appendChild(loaderContainer)
+  body.style.overflow = 'hidden'
+}
+
+function removeMobileLoader() {
+  const loader = document.querySelector('.transition-loader-container')
+  if(loader) {
+    loader.parentNode.removeChild(loader)
+    body.style.overflow = 'visible'
+  }
+}

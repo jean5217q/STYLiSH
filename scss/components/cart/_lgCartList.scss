@@ -1,13 +1,14 @@
-//在哪裡
-.page-site-text {
-  color: $side-text;
-  font-size: 0.9em;
-  padding-bottom: 3em;
-}
+// //在哪裡
+// .page-site-text {
+//   color: $side-text;
+//   font-size: 0.9em;
+//   padding-bottom: 3em;
+// }
 
 .cart-product-group {
   @include flexy($dir: column);
   width: 100%;
+  padding-top: 2em;
   padding-bottom: 2em;
 }
 // 文字 48/16/16/16/7

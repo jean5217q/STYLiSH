@@ -7,6 +7,10 @@ const windowHeight = document.documentElement.clientHeight //視窗高度
 
 //初始化
 function pageInit() {
+  if(WinWidth<576) {
+    container.style.opacity=1
+    createMobileLoader()
+  }
   fetchHandler(initUrl)
 }
 pageInit()
@@ -17,11 +21,11 @@ async function fetchHandler(url) {
   const json = await res.json()
   const paging = json.paging
   const data = json.data
-  console.log(data)
   // 畫面
-  clearLoader()
+  removeLoader()
+  removeMobileLoader()
   data.length===0 ? renderNone() : render(data)
-  requestAnimationFrame(pageTransitionAnimate)
+  if(WinWidth>575) requestAnimationFrame(pageTransitionAnimate)
   if(paging) {
     isScroll = true
     pagingUrl = `${baseUrl}/${cataUrl}?paging=${paging}`
@@ -36,7 +40,9 @@ function pagingHandler() {
   const top = bottom.top
   if(!isScroll) return
   else if(top < windowHeight) {
-    productWrap.appendChild(createLoader())
+    const loader = createNewLoader()
+    loader.classList.add('scroll')
+    productWrap.appendChild(loader)
     fetchHandler(pagingUrl,cataUrl)
     isScroll = false
   }
