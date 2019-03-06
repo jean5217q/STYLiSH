@@ -1,16 +1,16 @@
 
 .cart-popup-container {
-  display: none;
+  display: block;
 }
 .cart-popup-background  {
-  @include absolute($t: 0,$l: 0);
+  @include fixed($t: 0,$l: 0);
   @include size(100vw,100vh);
   background-color: $text;
   opacity: 0.8;
 }
 .cart-popup-box {
   width: 400px;
-  @include absolute($t: 50%,$l: 50%);
+  @include fixed($t: 50%,$l: 50%);
   transform: translate(-50%,-50%);
   border: 1px solid $input-border;
   padding: 20px;
