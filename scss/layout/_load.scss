@@ -13,8 +13,8 @@
 
 .page-load-contents {
   @include flexy;
-  @include absolute($t: 45%,$l: 50%);
-  transform: translate(-50%,0%);
+  @include absolute($t: 50%,$l: 50%);
+  transform: translate(-50%,-50%);
 }
 .page-load-word-container {
   position: relative;
