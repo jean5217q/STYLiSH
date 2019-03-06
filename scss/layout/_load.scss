@@ -99,6 +99,7 @@ circle {
 .transition-loader-container {
   @include absolute($t: 0,$l: 0,$z: 1);
   @include size(100%,101vh);
+  @include flexy($ais: center,$just: center);
   background-color: white;
 }
 .transition-loader {
