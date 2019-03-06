@@ -1942,7 +1942,7 @@ main {
 }
 
 .cart-popup-container {
-  display: block;
+  display: none;
 }
 
 .cart-popup-background {
