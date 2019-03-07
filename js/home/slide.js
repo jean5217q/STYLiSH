@@ -1,5 +1,3 @@
-
-
 (function(){
   var URL = document.location.toString();
   var useragent = navigator.userAgent;
