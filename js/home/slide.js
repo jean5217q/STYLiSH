@@ -190,11 +190,7 @@
   //點哪跳哪=>判斷左到右，右到左(O) 第一到最後 /最後到第一另外判斷
   function clickHandler() {
     const dotGroup = document.querySelectorAll('.dot')
-    dotGroup.forEach(el=> el.addEventListener('click',() => {
-      // 電腦手機判斷
-      if(!carouselMobile) interval = clearInterval(interval)
-      else interval = setInterval(autoSlide,3000)
-      console.log('click')
+    function dotSite(el) {
       const activeItem = document.querySelector('.img-active')
       const activeId = parseInt(activeItem.dataset.index)
       const id = parseInt(el.dataset.index)
@@ -215,7 +211,26 @@
         slideLeftHandler(id+1)
       }
         currentDot(id)
+    }
+    if(!carouselMobile) {
+      dotGroup.forEach(el=> el.addEventListener('click',function (e){
+        dotSite(e.currentTarget)
+        interval = clearInterval(interval)
+        console.log('click')
     }))
+  }
+  else {
+    dotGroup.forEach(el=> el.addEventListener('touchstart',function (e){
+      dotSite(e.currentTarget)
+      interval = clearInterval(interval)
+      console.log('dottouch')
+    }))
+    dotGroup.forEach(el=> el.addEventListener('touchend',function (){
+      interval = setInterval(autoSlide,3000)
+      console.log('dottouchend')
+    }))
+  }
+    
   }
   //自動播放往右滑動
   function autoSlide() {
@@ -288,19 +303,26 @@
   let startPointX
   let endPointX
   //滑鼠按下
-  heroImgGroup.addEventListener('mousedown',function(e){
-    startPointX = e.clientX
-    interval = clearInterval(interval)
-  })
-  //滑鼠放開
-  heroImgGroup.addEventListener('mouseup',function(e){
-    endPointX = e.clientX
-    slideWay()
-  })
+  if(!carouselMobile) {
+    heroImgGroup.addEventListener('mousedown',function(e){
+      startPointX = e.clientX
+      interval = clearInterval(interval)
+      console.log('mousdown')
+    })
+    //滑鼠放開
+    heroImgGroup.addEventListener('mouseup',function(e){
+      endPointX = e.clientX
+      slideWay()
+      console.log('mouseup')
+    })
+  }
+  
   //觸控按下
   heroImgGroup.addEventListener('touchstart', (e)=>{
     startPointX = e.changedTouches[0].clientX
-    interval = clearInterval(interval)
+    if (!e.target.classList.contains('dot')) {
+      interval = clearInterval(interval)
+    }
     console.log('touch')
   })
   //觸控滑動
@@ -310,10 +332,11 @@
     console.log('touchmove')
   })
   //觸控放開
-  heroImgGroup.addEventListener('touchend',()=>{
+  heroImgGroup.addEventListener('touchend',(e)=>{
     slideWay()
- 
-    interval = setInterval(autoSlide,3000)
+    if (!e.target.classList.contains('dot')) {
+      interval = setInterval(autoSlide,3000)
+    }
     console.log('touchend')
   })
 
