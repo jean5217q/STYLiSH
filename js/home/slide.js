@@ -1,4 +1,34 @@
+
+// if( useragent.indexOf('iphone') != -1 ) location.replace("https://itunes.apple.com/us/app/li-da-zi-xun-xing-dongapp/id665035983?l=zh&ls=1&mt=8");//iphone
+// else if( useragent.indexOf('ipad') != -1 || useragent.indexOf('ipod') != -1) location.replace("https://itunes.apple.com/us/app/li-da-zi-xun-xing-dongapp/id665035983?l=zh&ls=1&mt=8");//ipad
+// else if( useragent.indexOf('android') != -1 ) {
+// if( ConsiderLimits() )
+// {
+// location.replace("https://play.google.com/store/apps/details?id=tw.com.giantapp.sample"); // android pad
+// }else{
+// location.replace("https://play.google.com/store/apps/details?id=tw.com.giantapp.sample"); // android phone
+// }
+// }else{
+// location.replace("http://www.e-giant.com.tw/"); // PC
+// }
+
+// function ConsiderLimits() {
+// if( screen.width >= 1024 && screen.height >= 600 )
+// return 1;
+// return 0;
+// }
+
+
+
 (function(){
+  var URL = document.location.toString();
+  var useragent = navigator.userAgent;
+  useragent = useragent.toLowerCase();
+  let carouselMobile = false
+  if(useragent.indexOf('iphone') != -1 ) carouselMobile = true
+  else if(useragent.indexOf('android') != -1 ) carouselMobile = true
+  else if(useragent.indexOf('ipad') != -1 ) carouselMobile = true
+  console.log(carouselMobile)
   const url = 'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
   let data = []
   let width = document.body.clientWidth //抓取視窗寬度(位移用)
@@ -161,7 +191,10 @@
   function clickHandler() {
     const dotGroup = document.querySelectorAll('.dot')
     dotGroup.forEach(el=> el.addEventListener('click',() => {
-      interval = clearInterval(interval)
+      // 電腦手機判斷
+      if(!carouselMobile) interval = clearInterval(interval)
+      else interval = setInterval(autoSlide,3000)
+      console.log('click')
       const activeItem = document.querySelector('.img-active')
       const activeId = parseInt(activeItem.dataset.index)
       const id = parseInt(el.dataset.index)
@@ -232,17 +265,19 @@
     })
   }
   //滑入清除自動播放
-  heroImgGroup.addEventListener('mouseover',()=>{
-    interval = clearInterval(interval)
-  })
-  //點擊點清除自動播放
-  heroImgGroup.addEventListener('click',()=>{
-    interval = clearInterval(interval)
-  })
-  //移出開啟自動播放
-  heroImgGroup.addEventListener('mouseout',()=>{
-    interval = setInterval(autoSlide,3000)
-  })
+  if(!carouselMobile) {
+    heroImgGroup.addEventListener('mouseover',()=>{
+      interval = clearInterval(interval)
+      console.log('mouseover')
+    })
+    //移出開啟自動播放 
+    heroImgGroup.addEventListener('mouseout',()=>{
+      const winWidth = window.innerWidth
+      interval = setInterval(autoSlide,3000)
+      console.log('mouseout')
+    })
+  }
+  
 
   
   /* 
@@ -266,18 +301,20 @@
   heroImgGroup.addEventListener('touchstart', (e)=>{
     startPointX = e.changedTouches[0].clientX
     interval = clearInterval(interval)
+    console.log('touch')
   })
   //觸控滑動
   heroImgGroup.addEventListener('touchmove', (e)=>{
     endPointX = e.changedTouches[0].clientX
     interval = clearInterval(interval)
+    console.log('touchmove')
   })
   //觸控放開
   heroImgGroup.addEventListener('touchend',()=>{
     slideWay()
  
     interval = setInterval(autoSlide,3000)
-  
+    console.log('touchend')
   })
 
   //加入最短要滑動的距離(如果使用者滑非常快)
