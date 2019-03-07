@@ -51,7 +51,7 @@
   })
 
 
-  let interval = setInterval(autoSlide,3000)
+  let interval = setInterval(autoSlide,8000)
   
   //元素創建(OK)
   function createElement(frame,id) {
@@ -276,7 +276,7 @@
     //移出開啟自動播放 
     heroImgGroup.addEventListener('mouseout',()=>{
       const winWidth = window.innerWidth
-      interval = setInterval(autoSlide,3000)
+      interval = setInterval(autoSlide,8000)
       console.log('mouseout')
     })
   }
@@ -325,7 +325,7 @@
     if(!endPointX) return
     slideWay()
     if (!e.target.classList.contains('dot')) {
-      interval = setInterval(autoSlide,3000)
+      interval = setInterval(autoSlide,8000)
     }
     console.log('touchend')
   })
