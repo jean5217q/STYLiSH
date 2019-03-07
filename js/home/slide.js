@@ -5,7 +5,7 @@
   const heroImgGroup = document.querySelector('.hero-image-group') //最大 
   const heroImgWrap = document.querySelector('.hero-image-wrap') //整條輪播
   const dotWrap = document.querySelector('.dot-wrap') //點全組
-
+  
   fetch(url)
   .then(res => {
     return res.json()
@@ -21,7 +21,7 @@
   })
 
 
-  let interval = setInterval(autoSlide,10000)
+  let interval = setInterval(autoSlide,3000)
   
   //元素創建(OK)
   function createElement(frame,id) {
@@ -29,7 +29,7 @@
     const heroImg = document.createElement('div')
     heroImg.className='hero-image'
     heroImg.style.backgroundImage = 
-    `linear-gradient(90deg,white,transparent 60%), 
+    `linear-gradient(90deg,white,rgba(255, 255, 255, 0) 60%), 
     url('https://api.appworks-school.tw${data[id].picture}')` 
     //處理文字
     const textArray = data[id].story.split(/[\n,]/g) //依照換行分割
@@ -161,6 +161,7 @@
   function clickHandler() {
     const dotGroup = document.querySelectorAll('.dot')
     dotGroup.forEach(el=> el.addEventListener('click',() => {
+      interval = clearInterval(interval)
       const activeItem = document.querySelector('.img-active')
       const activeId = parseInt(activeItem.dataset.index)
       const id = parseInt(el.dataset.index)
@@ -189,7 +190,6 @@
     const activeId = parseInt(activeItem.dataset.index)
     slideRightHandler(activeId)
     activeId===data.length ? currentDot(1) : currentDot(activeId+1)
- 
   }
 
   //創建輪播元素(OK)
@@ -241,7 +241,7 @@
   })
   //移出開啟自動播放
   heroImgGroup.addEventListener('mouseout',()=>{
-    interval = setInterval(autoSlide,10000)
+    interval = setInterval(autoSlide,3000)
   })
 
   
@@ -261,7 +261,6 @@
   heroImgGroup.addEventListener('mouseup',function(e){
     endPointX = e.clientX
     slideWay()
-    interval = setInterval(autoSlide,10000)
   })
   //觸控按下
   heroImgGroup.addEventListener('touchstart', (e)=>{
@@ -276,6 +275,9 @@
   //觸控放開
   heroImgGroup.addEventListener('touchend',()=>{
     slideWay()
+ 
+    interval = setInterval(autoSlide,3000)
+  
   })
 
   //加入最短要滑動的距離(如果使用者滑非常快)
@@ -292,6 +294,5 @@
     }
   }
 })()
-
 
 
