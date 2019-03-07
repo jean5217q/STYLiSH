@@ -104,6 +104,7 @@ function getCartTotal(){
   const numWrap = document.querySelectorAll('.cart-num-wrap')
   const num = document.querySelectorAll('.cart-num')
   const quantity = cartArray.map(el=>el.qty)
+  console.log(typeof quantity[0])
     let total = quantity.reduce((acc,cur)=>{
       return acc + cur
     },0)

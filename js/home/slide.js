@@ -218,19 +218,7 @@
         interval = clearInterval(interval)
         console.log('click')
     }))
-  }
-  else {
-    dotGroup.forEach(el=> el.addEventListener('touchstart',function (e){
-      dotSite(e.currentTarget)
-      interval = clearInterval(interval)
-      console.log('dottouch')
-    }))
-    dotGroup.forEach(el=> el.addEventListener('touchend',function (){
-      interval = setInterval(autoSlide,3000)
-      console.log('dottouchend')
-    }))
-  }
-    
+    } 
   }
   //自動播放往右滑動
   function autoSlide() {
