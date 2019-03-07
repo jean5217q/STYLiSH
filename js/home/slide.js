@@ -320,6 +320,7 @@
   //觸控按下
   heroImgGroup.addEventListener('touchstart', (e)=>{
     startPointX = e.changedTouches[0].clientX
+    endPointX = null
     if (!e.target.classList.contains('dot')) {
       interval = clearInterval(interval)
     }
@@ -333,6 +334,7 @@
   })
   //觸控放開
   heroImgGroup.addEventListener('touchend',(e)=>{
+    if(!endPointX) return
     slideWay()
     if (!e.target.classList.contains('dot')) {
       interval = setInterval(autoSlide,3000)
@@ -343,6 +345,7 @@
   //加入最短要滑動的距離(如果使用者滑非常快)
   function slideWay(){
     let distance = startPointX - endPointX
+    console.log(distance)
     const activeItem = document.querySelector('.img-active')
     let id = parseInt(activeItem.dataset.index)
     if(distance < 0 && Math.abs(distance) > 50) {
