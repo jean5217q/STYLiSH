@@ -337,11 +337,11 @@
     const activeItem = document.querySelector('.img-active')
     let id = parseInt(activeItem.dataset.index)
     if(distance < 0 && Math.abs(distance) > 50) {
-      autoSlide()
-    }
-    else if(distance>0 && Math.abs(distance) > 50) {
       slideLeftHandler(id)
       id===1 ? currentDot(data.length) : currentDot(id-1) 
+    }
+    else if(distance>0 && Math.abs(distance) > 50) {
+      autoSlide() 
     }
   }
 })()
