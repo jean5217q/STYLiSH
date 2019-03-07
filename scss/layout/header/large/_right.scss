@@ -18,13 +18,13 @@
     background-color: transparent;
   }
   .lg-search-btn-wrap {
-    @include absolute($t: 50%,$r: 0);
+    @include absolute($t: 50%,$r: 5px);
     transform: translateY(-50%);
     cursor: pointer;
     img {
-      @include size(2.2rem,2.2rem);
-      max-width: 40px;
-      max-height: 40px;
+      @include size(1.5rem,1.5rem);
+      // max-width: 40px;
+      // max-height: 40px;
     }
   }
 }

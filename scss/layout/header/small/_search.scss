@@ -46,11 +46,11 @@
   }
   .sm-search-btn {
     @include flexy($just: center,$ais: center);
-    @include absolute($t: 3px,$r: -5px);
+    @include absolute($t: 2px,$r: -5px);
     @include size(2rem,2rem);
   }
   .sm-search-icon {
-    width: 2rem;
+    width: 1.4rem;
     cursor: pointer;
   }
 }

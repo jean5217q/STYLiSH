@@ -1,24 +1,4 @@
 
-// if( useragent.indexOf('iphone') != -1 ) location.replace("https://itunes.apple.com/us/app/li-da-zi-xun-xing-dongapp/id665035983?l=zh&ls=1&mt=8");//iphone
-// else if( useragent.indexOf('ipad') != -1 || useragent.indexOf('ipod') != -1) location.replace("https://itunes.apple.com/us/app/li-da-zi-xun-xing-dongapp/id665035983?l=zh&ls=1&mt=8");//ipad
-// else if( useragent.indexOf('android') != -1 ) {
-// if( ConsiderLimits() )
-// {
-// location.replace("https://play.google.com/store/apps/details?id=tw.com.giantapp.sample"); // android pad
-// }else{
-// location.replace("https://play.google.com/store/apps/details?id=tw.com.giantapp.sample"); // android phone
-// }
-// }else{
-// location.replace("http://www.e-giant.com.tw/"); // PC
-// }
-
-// function ConsiderLimits() {
-// if( screen.width >= 1024 && screen.height >= 600 )
-// return 1;
-// return 0;
-// }
-
-
 
 (function(){
   var URL = document.location.toString();
@@ -28,7 +8,7 @@
   if(useragent.indexOf('iphone') != -1 ) carouselMobile = true
   else if(useragent.indexOf('android') != -1 ) carouselMobile = true
   else if(useragent.indexOf('ipad') != -1 ) carouselMobile = true
-  console.log(carouselMobile)
+
   const url = 'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
   let data = []
   let width = document.body.clientWidth //抓取視窗寬度(位移用)
